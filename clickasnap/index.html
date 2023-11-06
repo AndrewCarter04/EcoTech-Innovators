@@ -1,2144 +1,763 @@
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <style type="text/css">
-    :root,
-    :host {
-      --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid";
-      --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular";
-      --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light";
-      --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin";
-      --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
-      --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
-      --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";
-      --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";
-      --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
-    }
-
-    svg:not(:root).svg-inline--fa,
-    svg:not(:host).svg-inline--fa {
-      overflow: visible;
-      box-sizing: content-box;
-    }
-
-    .svg-inline--fa {
-      display: var(--fa-display, inline-block);
-      height: 1em;
-      overflow: visible;
-      vertical-align: -0.125em;
-    }
-
-    .svg-inline--fa.fa-2xs {
-      vertical-align: 0.1em;
-    }
-
-    .svg-inline--fa.fa-xs {
-      vertical-align: 0em;
-    }
-
-    .svg-inline--fa.fa-sm {
-      vertical-align: -0.0714285705em;
-    }
-
-    .svg-inline--fa.fa-lg {
-      vertical-align: -0.2em;
-    }
-
-    .svg-inline--fa.fa-xl {
-      vertical-align: -0.25em;
-    }
-
-    .svg-inline--fa.fa-2xl {
-      vertical-align: -0.3125em;
-    }
-
-    .svg-inline--fa.fa-pull-left {
-      margin-right: var(--fa-pull-margin, 0.3em);
-      width: auto;
-    }
-
-    .svg-inline--fa.fa-pull-right {
-      margin-left: var(--fa-pull-margin, 0.3em);
-      width: auto;
-    }
-
-    .svg-inline--fa.fa-li {
-      width: var(--fa-li-width, 2em);
-      top: 0.25em;
-    }
-
-    .svg-inline--fa.fa-fw {
-      width: var(--fa-fw-width, 1.25em);
-    }
-
-    .fa-layers svg.svg-inline--fa {
-      bottom: 0;
-      left: 0;
-      margin: auto;
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-
-    .fa-layers-counter,
-    .fa-layers-text {
-      display: inline-block;
-      position: absolute;
-      text-align: center;
-    }
-
-    .fa-layers {
-      display: inline-block;
-      height: 1em;
-      position: relative;
-      text-align: center;
-      vertical-align: -0.125em;
-      width: 1em;
-    }
-
-    .fa-layers svg.svg-inline--fa {
-      -webkit-transform-origin: center center;
-      transform-origin: center center;
-    }
-
-    .fa-layers-text {
-      left: 50%;
-      top: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      -webkit-transform-origin: center center;
-      transform-origin: center center;
-    }
-
-    .fa-layers-counter {
-      background-color: var(--fa-counter-background-color, #ff253a);
-      border-radius: var(--fa-counter-border-radius, 1em);
-      box-sizing: border-box;
-      color: var(--fa-inverse, #fff);
-      line-height: var(--fa-counter-line-height, 1);
-      max-width: var(--fa-counter-max-width, 5em);
-      min-width: var(--fa-counter-min-width, 1.5em);
-      overflow: hidden;
-      padding: var(--fa-counter-padding, 0.25em 0.5em);
-      right: var(--fa-right, 0);
-      text-overflow: ellipsis;
-      top: var(--fa-top, 0);
-      -webkit-transform: scale(var(--fa-counter-scale, 0.25));
-      transform: scale(var(--fa-counter-scale, 0.25));
-      -webkit-transform-origin: top right;
-      transform-origin: top right;
-    }
-
-    .fa-layers-bottom-right {
-      bottom: var(--fa-bottom, 0);
-      right: var(--fa-right, 0);
-      top: auto;
-      -webkit-transform: scale(var(--fa-layers-scale, 0.25));
-      transform: scale(var(--fa-layers-scale, 0.25));
-      -webkit-transform-origin: bottom right;
-      transform-origin: bottom right;
-    }
-
-    .fa-layers-bottom-left {
-      bottom: var(--fa-bottom, 0);
-      left: var(--fa-left, 0);
-      right: auto;
-      top: auto;
-      -webkit-transform: scale(var(--fa-layers-scale, 0.25));
-      transform: scale(var(--fa-layers-scale, 0.25));
-      -webkit-transform-origin: bottom left;
-      transform-origin: bottom left;
-    }
-
-    .fa-layers-top-right {
-      top: var(--fa-top, 0);
-      right: var(--fa-right, 0);
-      -webkit-transform: scale(var(--fa-layers-scale, 0.25));
-      transform: scale(var(--fa-layers-scale, 0.25));
-      -webkit-transform-origin: top right;
-      transform-origin: top right;
-    }
-
-    .fa-layers-top-left {
-      left: var(--fa-left, 0);
-      right: auto;
-      top: var(--fa-top, 0);
-      -webkit-transform: scale(var(--fa-layers-scale, 0.25));
-      transform: scale(var(--fa-layers-scale, 0.25));
-      -webkit-transform-origin: top left;
-      transform-origin: top left;
-    }
-
-    .fa-1x {
-      font-size: 1em;
-    }
-
-    .fa-2x {
-      font-size: 2em;
-    }
-
-    .fa-3x {
-      font-size: 3em;
-    }
-
-    .fa-4x {
-      font-size: 4em;
-    }
-
-    .fa-5x {
-      font-size: 5em;
-    }
-
-    .fa-6x {
-      font-size: 6em;
-    }
-
-    .fa-7x {
-      font-size: 7em;
-    }
-
-    .fa-8x {
-      font-size: 8em;
-    }
-
-    .fa-9x {
-      font-size: 9em;
-    }
-
-    .fa-10x {
-      font-size: 10em;
-    }
-
-    .fa-2xs {
-      font-size: 0.625em;
-      line-height: 0.1em;
-      vertical-align: 0.225em;
-    }
-
-    .fa-xs {
-      font-size: 0.75em;
-      line-height: 0.0833333337em;
-      vertical-align: 0.125em;
-    }
-
-    .fa-sm {
-      font-size: 0.875em;
-      line-height: 0.0714285718em;
-      vertical-align: 0.0535714295em;
-    }
-
-    .fa-lg {
-      font-size: 1.25em;
-      line-height: 0.05em;
-      vertical-align: -0.075em;
-    }
-
-    .fa-xl {
-      font-size: 1.5em;
-      line-height: 0.0416666682em;
-      vertical-align: -0.125em;
-    }
-
-    .fa-2xl {
-      font-size: 2em;
-      line-height: 0.03125em;
-      vertical-align: -0.1875em;
-    }
-
-    .fa-fw {
-      text-align: center;
-      width: 1.25em;
-    }
-
-    .fa-ul {
-      list-style-type: none;
-      margin-left: var(--fa-li-margin, 2.5em);
-      padding-left: 0;
-    }
-
-    .fa-ul>li {
-      position: relative;
-    }
-
-    .fa-li {
-      left: calc(var(--fa-li-width, 2em) * -1);
-      position: absolute;
-      text-align: center;
-      width: var(--fa-li-width, 2em);
-      line-height: inherit;
-    }
-
-    .fa-border {
-      border-color: var(--fa-border-color, #eee);
-      border-radius: var(--fa-border-radius, 0.1em);
-      border-style: var(--fa-border-style, solid);
-      border-width: var(--fa-border-width, 0.08em);
-      padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
-    }
-
-    .fa-pull-left {
-      float: left;
-      margin-right: var(--fa-pull-margin, 0.3em);
-    }
-
-    .fa-pull-right {
-      float: right;
-      margin-left: var(--fa-pull-margin, 0.3em);
-    }
-
-    .fa-beat {
-      -webkit-animation-name: fa-beat;
-      animation-name: fa-beat;
-      -webkit-animation-delay: var(--fa-animation-delay, 0s);
-      animation-delay: var(--fa-animation-delay, 0s);
-      -webkit-animation-direction: var(--fa-animation-direction, normal);
-      animation-direction: var(--fa-animation-direction, normal);
-      -webkit-animation-duration: var(--fa-animation-duration, 1s);
-      animation-duration: var(--fa-animation-duration, 1s);
-      -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-      animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-      -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
-      animation-timing-function: var(--fa-animation-timing, ease-in-out);
-    }
-
-    .fa-bounce {
-      -webkit-animation-name: fa-bounce;
-      animation-name: fa-bounce;
-      -webkit-animation-delay: var(--fa-animation-delay, 0s);
-      animation-delay: var(--fa-animation-delay, 0s);
-      -webkit-animation-direction: var(--fa-animation-direction, normal);
-      animation-direction: var(--fa-animation-direction, normal);
-      -webkit-animation-duration: var(--fa-animation-duration, 1s);
-      animation-duration: var(--fa-animation-duration, 1s);
-      -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-      animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-      -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
-      animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
-    }
-
-    .fa-fade {
-      -webkit-animation-name: fa-fade;
-      animation-name: fa-fade;
-      -webkit-animation-delay: var(--fa-animation-delay, 0s);
-      animation-delay: var(--fa-animation-delay, 0s);
-      -webkit-animation-direction: var(--fa-animation-direction, normal);
-      animation-direction: var(--fa-animation-direction, normal);
-      -webkit-animation-duration: var(--fa-animation-duration, 1s);
-      animation-duration: var(--fa-animation-duration, 1s);
-      -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-      animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-      -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
-      animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
-    }
-
-    .fa-beat-fade {
-      -webkit-animation-name: fa-beat-fade;
-      animation-name: fa-beat-fade;
-      -webkit-animation-delay: var(--fa-animation-delay, 0s);
-      animation-delay: var(--fa-animation-delay, 0s);
-      -webkit-animation-direction: var(--fa-animation-direction, normal);
-      animation-direction: var(--fa-animation-direction, normal);
-      -webkit-animation-duration: var(--fa-animation-duration, 1s);
-      animation-duration: var(--fa-animation-duration, 1s);
-      -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-      animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-      -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
-      animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
-    }
-
-    .fa-flip {
-      -webkit-animation-name: fa-flip;
-      animation-name: fa-flip;
-      -webkit-animation-delay: var(--fa-animation-delay, 0s);
-      animation-delay: var(--fa-animation-delay, 0s);
-      -webkit-animation-direction: var(--fa-animation-direction, normal);
-      animation-direction: var(--fa-animation-direction, normal);
-      -webkit-animation-duration: var(--fa-animation-duration, 1s);
-      animation-duration: var(--fa-animation-duration, 1s);
-      -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-      animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-      -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
-      animation-timing-function: var(--fa-animation-timing, ease-in-out);
-    }
-
-    .fa-shake {
-      -webkit-animation-name: fa-shake;
-      animation-name: fa-shake;
-      -webkit-animation-delay: var(--fa-animation-delay, 0s);
-      animation-delay: var(--fa-animation-delay, 0s);
-      -webkit-animation-direction: var(--fa-animation-direction, normal);
-      animation-direction: var(--fa-animation-direction, normal);
-      -webkit-animation-duration: var(--fa-animation-duration, 1s);
-      animation-duration: var(--fa-animation-duration, 1s);
-      -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-      animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-      -webkit-animation-timing-function: var(--fa-animation-timing, linear);
-      animation-timing-function: var(--fa-animation-timing, linear);
-    }
-
-    .fa-spin {
-      -webkit-animation-name: fa-spin;
-      animation-name: fa-spin;
-      -webkit-animation-delay: var(--fa-animation-delay, 0s);
-      animation-delay: var(--fa-animation-delay, 0s);
-      -webkit-animation-direction: var(--fa-animation-direction, normal);
-      animation-direction: var(--fa-animation-direction, normal);
-      -webkit-animation-duration: var(--fa-animation-duration, 2s);
-      animation-duration: var(--fa-animation-duration, 2s);
-      -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-      animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-      -webkit-animation-timing-function: var(--fa-animation-timing, linear);
-      animation-timing-function: var(--fa-animation-timing, linear);
-    }
-
-    .fa-spin-reverse {
-      --fa-animation-direction: reverse;
-    }
-
-    .fa-pulse,
-    .fa-spin-pulse {
-      -webkit-animation-name: fa-spin;
-      animation-name: fa-spin;
-      -webkit-animation-direction: var(--fa-animation-direction, normal);
-      animation-direction: var(--fa-animation-direction, normal);
-      -webkit-animation-duration: var(--fa-animation-duration, 1s);
-      animation-duration: var(--fa-animation-duration, 1s);
-      -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-      animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-      -webkit-animation-timing-function: var(--fa-animation-timing, steps(8));
-      animation-timing-function: var(--fa-animation-timing, steps(8));
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      .fa-beat,
-      .fa-bounce,
-      .fa-fade,
-      .fa-beat-fade,
-      .fa-flip,
-      .fa-pulse,
-      .fa-shake,
-      .fa-spin,
-      .fa-spin-pulse {
-        -webkit-animation-delay: -1ms;
-        animation-delay: -1ms;
-        -webkit-animation-duration: 1ms;
-        animation-duration: 1ms;
-        -webkit-animation-iteration-count: 1;
-        animation-iteration-count: 1;
-        -webkit-transition-delay: 0s;
-        transition-delay: 0s;
-        -webkit-transition-duration: 0s;
-        transition-duration: 0s;
-      }
-    }
-
-    @-webkit-keyframes fa-beat {
-
-      0%,
-      90% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-      }
-
-      45% {
-        -webkit-transform: scale(var(--fa-beat-scale, 1.25));
-        transform: scale(var(--fa-beat-scale, 1.25));
-      }
-    }
-
-    @keyframes fa-beat {
-
-      0%,
-      90% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-      }
-
-      45% {
-        -webkit-transform: scale(var(--fa-beat-scale, 1.25));
-        transform: scale(var(--fa-beat-scale, 1.25));
-      }
-    }
-
-    @-webkit-keyframes fa-bounce {
-      0% {
-        -webkit-transform: scale(1, 1) translateY(0);
-        transform: scale(1, 1) translateY(0);
-      }
-
-      10% {
-        -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
-        transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
-      }
-
-      30% {
-        -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
-        transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
-      }
-
-      50% {
-        -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
-        transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
-      }
-
-      57% {
-        -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
-        transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
-      }
-
-      64% {
-        -webkit-transform: scale(1, 1) translateY(0);
-        transform: scale(1, 1) translateY(0);
-      }
-
-      100% {
-        -webkit-transform: scale(1, 1) translateY(0);
-        transform: scale(1, 1) translateY(0);
-      }
-    }
-
-    @keyframes fa-bounce {
-      0% {
-        -webkit-transform: scale(1, 1) translateY(0);
-        transform: scale(1, 1) translateY(0);
-      }
-
-      10% {
-        -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
-        transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
-      }
-
-      30% {
-        -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
-        transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
-      }
-
-      50% {
-        -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
-        transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
-      }
-
-      57% {
-        -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
-        transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
-      }
-
-      64% {
-        -webkit-transform: scale(1, 1) translateY(0);
-        transform: scale(1, 1) translateY(0);
-      }
-
-      100% {
-        -webkit-transform: scale(1, 1) translateY(0);
-        transform: scale(1, 1) translateY(0);
-      }
-    }
-
-    @-webkit-keyframes fa-fade {
-      50% {
-        opacity: var(--fa-fade-opacity, 0.4);
-      }
-    }
-
-    @keyframes fa-fade {
-      50% {
-        opacity: var(--fa-fade-opacity, 0.4);
-      }
-    }
-
-    @-webkit-keyframes fa-beat-fade {
-
-      0%,
-      100% {
-        opacity: var(--fa-beat-fade-opacity, 0.4);
-        -webkit-transform: scale(1);
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 1;
-        -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
-        transform: scale(var(--fa-beat-fade-scale, 1.125));
-      }
-    }
-
-    @keyframes fa-beat-fade {
-
-      0%,
-      100% {
-        opacity: var(--fa-beat-fade-opacity, 0.4);
-        -webkit-transform: scale(1);
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 1;
-        -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
-        transform: scale(var(--fa-beat-fade-scale, 1.125));
-      }
-    }
-
-    @-webkit-keyframes fa-flip {
-      50% {
-        -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
-        transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
-      }
-    }
-
-    @keyframes fa-flip {
-      50% {
-        -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
-        transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
-      }
-    }
-
-    @-webkit-keyframes fa-shake {
-      0% {
-        -webkit-transform: rotate(-15deg);
-        transform: rotate(-15deg);
-      }
-
-      4% {
-        -webkit-transform: rotate(15deg);
-        transform: rotate(15deg);
-      }
-
-      8%,
-      24% {
-        -webkit-transform: rotate(-18deg);
-        transform: rotate(-18deg);
-      }
-
-      12%,
-      28% {
-        -webkit-transform: rotate(18deg);
-        transform: rotate(18deg);
-      }
-
-      16% {
-        -webkit-transform: rotate(-22deg);
-        transform: rotate(-22deg);
-      }
-
-      20% {
-        -webkit-transform: rotate(22deg);
-        transform: rotate(22deg);
-      }
-
-      32% {
-        -webkit-transform: rotate(-12deg);
-        transform: rotate(-12deg);
-      }
-
-      36% {
-        -webkit-transform: rotate(12deg);
-        transform: rotate(12deg);
-      }
-
-      40%,
-      100% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-      }
-    }
-
-    @keyframes fa-shake {
-      0% {
-        -webkit-transform: rotate(-15deg);
-        transform: rotate(-15deg);
-      }
-
-      4% {
-        -webkit-transform: rotate(15deg);
-        transform: rotate(15deg);
-      }
-
-      8%,
-      24% {
-        -webkit-transform: rotate(-18deg);
-        transform: rotate(-18deg);
-      }
-
-      12%,
-      28% {
-        -webkit-transform: rotate(18deg);
-        transform: rotate(18deg);
-      }
-
-      16% {
-        -webkit-transform: rotate(-22deg);
-        transform: rotate(-22deg);
-      }
-
-      20% {
-        -webkit-transform: rotate(22deg);
-        transform: rotate(22deg);
-      }
-
-      32% {
-        -webkit-transform: rotate(-12deg);
-        transform: rotate(-12deg);
-      }
-
-      36% {
-        -webkit-transform: rotate(12deg);
-        transform: rotate(12deg);
-      }
-
-      40%,
-      100% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-      }
-    }
-
-    @-webkit-keyframes fa-spin {
-      0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-      }
-
-      100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes fa-spin {
-      0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-      }
-
-      100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-      }
-    }
-
-    .fa-rotate-90 {
-      -webkit-transform: rotate(90deg);
-      transform: rotate(90deg);
-    }
-
-    .fa-rotate-180 {
-      -webkit-transform: rotate(180deg);
-      transform: rotate(180deg);
-    }
-
-    .fa-rotate-270 {
-      -webkit-transform: rotate(270deg);
-      transform: rotate(270deg);
-    }
-
-    .fa-flip-horizontal {
-      -webkit-transform: scale(-1, 1);
-      transform: scale(-1, 1);
-    }
-
-    .fa-flip-vertical {
-      -webkit-transform: scale(1, -1);
-      transform: scale(1, -1);
-    }
-
-    .fa-flip-both,
-    .fa-flip-horizontal.fa-flip-vertical {
-      -webkit-transform: scale(-1, -1);
-      transform: scale(-1, -1);
-    }
-
-    .fa-rotate-by {
-      -webkit-transform: rotate(var(--fa-rotate-angle, none));
-      transform: rotate(var(--fa-rotate-angle, none));
-    }
-
-    .fa-stack {
-      display: inline-block;
-      vertical-align: middle;
-      height: 2em;
-      position: relative;
-      width: 2.5em;
-    }
-
-    .fa-stack-1x,
-    .fa-stack-2x {
-      bottom: 0;
-      left: 0;
-      margin: auto;
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: var(--fa-stack-z-index, auto);
-    }
-
-    .svg-inline--fa.fa-stack-1x {
-      height: 1em;
-      width: 1.25em;
-    }
-
-    .svg-inline--fa.fa-stack-2x {
-      height: 2em;
-      width: 2.5em;
-    }
-
-    .fa-inverse {
-      color: var(--fa-inverse, #fff);
-    }
-
-    .sr-only,
-    .fa-sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border-width: 0;
-    }
-
-    .sr-only-focusable:not(:focus),
-    .fa-sr-only-focusable:not(:focus) {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border-width: 0;
-    }
-
-    .svg-inline--fa .fa-primary {
-      fill: var(--fa-primary-color, currentColor);
-      opacity: var(--fa-primary-opacity, 1);
-    }
-
-    .svg-inline--fa .fa-secondary {
-      fill: var(--fa-secondary-color, currentColor);
-      opacity: var(--fa-secondary-opacity, 0.4);
-    }
-
-    .svg-inline--fa.fa-swap-opacity .fa-primary {
-      opacity: var(--fa-secondary-opacity, 0.4);
-    }
-
-    .svg-inline--fa.fa-swap-opacity .fa-secondary {
-      opacity: var(--fa-primary-opacity, 1);
-    }
-
-    .svg-inline--fa mask .fa-primary,
-    .svg-inline--fa mask .fa-secondary {
-      fill: black;
-    }
-
-    .fad.fa-inverse,
-    .fa-duotone.fa-inverse {
-      color: var(--fa-inverse, #fff);
-    }
-  </style>
-  <link rel="icon" href="favicon.ico">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#000000">
-  <meta name="description"
-    content="ClickASnap is the world’s leading photo sharing platform, giving you the chance to get paid to share photos. Sign up for free today.">
-  <meta name="og:title" content="ClickASnap | Online Photo Sharing Platform, Share and Earn">
-  <meta name="og:description"
-    content="ClickASnap is the world’s leading photo sharing platform, giving you the chance to get paid to share photos. Sign up for free today.">
-  <meta name="og:image" content="logo512.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ClickASnap | Online Photo Sharing Platform, Share and Earn">
-  <meta name="twitter:description"
-    content="ClickASnap is the world’s leading photo sharing platform, giving you the chance to get paid to share photos. Sign up for free today.">
-  <meta name="twitter:image" content="logo512.png">
-  <link rel="apple-touch-icon" href="logo192.png">
-  <link rel="manifest" href="manifest.json">
-  <link rel="preconnect" href="https://a.pub.network/" crossorigin="">
-  <link rel="preconnect" href="https://b.pub.network/" crossorigin="">
-  <link rel="preconnect" href="https://c.pub.network/" crossorigin="">
-  <link rel="preconnect" href="https://d.pub.network/" crossorigin="">
-  <link rel="preconnect" href="https://secure.quantserve.com/" crossorigin="">
-  <link rel="preconnect" href="https://rules.quantcount.com/" crossorigin="">
-  <link rel="preconnect" href="https://pixel.quantserve.com/" crossorigin="">
-  <link rel="preconnect" href="https://cmp.quantcast.com/" crossorigin="">
-  <link rel="preconnect" href="https://btloader.com/" crossorigin="">
-  <link rel="preconnect" href="https://api.btloader.com/" crossorigin="">
-  <link rel="“preconnect”" href="“https://cdn.confiant-integrations.net”" crossorigin="">
-  <link rel="stylesheet" href="css/bootstrap-grid.css">
-  <script type="text/javascript" async=""
-    src="https://cdn-eu.pagesense.io/js/videscapelimited/457d6ccd02024735b280ee7df035c84e.js"></script>
-  <script type="text/javascript" async=""
-    src="https://www.googletagmanager.com/gtag/js?id=G-VLF2RGE5Q9&amp;l=dataLayer&amp;cx=c"></script>
-
-  <script>document.cookie.includes("CAS_ACCEPT_COOKIES=true") && (function (e, t, a, c, n) {e[c] = e[c] || [], e[c].push({"gtm.start": (new Date).getTime(), event: "gtm.js"}); var m = t.getElementsByTagName(a)[0], o = t.createElement(a); o.async = !0, o.src = "https://www.googletagmanager.com/gtm.js?id=GTM-T3CXDMX", m.parentNode.insertBefore(o, m)}(window, document, "script", "dataLayer"), window._mfq = window._mfq || [], function () {var e = document.createElement("script"); e.type = "text/javascript", e.defer = !0, e.src = "//cdn.mouseflow.com/projects/052a3497-1cb4-4b58-9c69-c02ea1aec628.js", document.getElementsByTagName("head")[0].appendChild(e)}())</script>
-  <script type="text/javascript" defer=""
-    src="//cdn.mouseflow.com/projects/052a3497-1cb4-4b58-9c69-c02ea1aec628.js"></script>
-  <script src="https://accounts.google.com/gsi/client" async="" defer="defer"></script>
-  <script>document.cookie.includes("CAS_ACCEPT_COOKIES=true") && (!function (e, t, n, c, o, a, s) {e.fbq || (o = e.fbq = function () {o.callMethod ? o.callMethod.apply(o, arguments) : o.queue.push(arguments)}, e._fbq || (e._fbq = o), o.push = o, o.loaded = !0, o.version = "2.0", o.queue = [], (a = t.createElement(n)).async = !0, a.src = "https://connect.facebook.net/en_US/fbevents.js", (s = t.getElementsByTagName(n)[0]).parentNode.insertBefore(a, s))}(window, document, "script"), fbq("init", "296438716371622"), fbq("track", "PageView"))</script>
-  <script>var freestar = freestar || {}; freestar.queue = freestar.queue || [], freestar.queue.push((function () {googletag.pubads().set("page_url", "https://clickasnap.com")}))</script>
-  <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=296438716371622&ev=PageView&noscript=1" /></noscript>
-  <title>ClickAsnap</title>
-  <script defer="defer" src="/static/js/main.60136ae2.js"></script>
-  <link href="static/css/main.3eb6b5b2.css" rel="stylesheet">
-  <style id="googleidentityservice_button_styles">
-    .qJTHM {
-      -webkit-user-select: none;
-      color: #202124;
-      direction: ltr;
-      -webkit-touch-callout: none;
-      font-family: "Roboto-Regular", arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      font-weight: 400;
-      margin: 0;
-      overflow: hidden;
-      -webkit-text-size-adjust: 100%
-    }
-
-    .ynRLnc {
-      left: -9999px;
-      position: absolute;
-      top: -9999px
-    }
-
-    .L6cTce {
-      display: none
-    }
-
-    .bltWBb {
-      word-break: break-all
-    }
-
-    .hSRGPd {
-      color: #1a73e8;
-      cursor: pointer;
-      font-weight: 500;
-      text-decoration: none
-    }
-
-    .Bz112c-W3lGp {
-      height: 16px;
-      width: 16px
-    }
-
-    .Bz112c-E3DyYd {
-      height: 20px;
-      width: 20px
-    }
-
-    .Bz112c-r9oPif {
-      height: 24px;
-      width: 24px
-    }
-
-    .Bz112c-uaxL4e {
-      -webkit-border-radius: 10px;
-      border-radius: 10px
-    }
-
-    .LgbsSe-Bz112c {
-      display: block
-    }
-
-    .S9gUrf-YoZ4jf,
-    .S9gUrf-YoZ4jf * {
-      border: none;
-      margin: 0;
-      padding: 0
-    }
-
-    .fFW7wc-ibnC6b>.aZ2wEe>div {
-      border-color: #4285f4
-    }
-
-    .P1ekSe-ZMv3u>div:nth-child(1) {
-      background-color: #1a73e8 !important
-    }
-
-    .P1ekSe-ZMv3u>div:nth-child(2),
-    .P1ekSe-ZMv3u>div:nth-child(3) {
-      background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), linear-gradient(to right, #1a73e8, #1a73e8) !important
-    }
-
-    .haAclf {
-      display: inline-block
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe {
-      -webkit-border-radius: 4px;
-      border-radius: 4px;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      -webkit-transition: background-color .218s, border-color .218s;
-      transition: background-color .218s, border-color .218s;
-      -webkit-user-select: none;
-      -webkit-appearance: none;
-      background-color: #fff;
-      background-image: none;
-      border: 1px solid #dadce0;
-      color: #3c4043;
-      cursor: pointer;
-      font-family: "Google Sans", arial, sans-serif;
-      font-size: 14px;
-      height: 40px;
-      letter-spacing: 0.25px;
-      outline: none;
-      overflow: hidden;
-      padding: 0 12px;
-      position: relative;
-      text-align: center;
-      vertical-align: middle;
-      white-space: nowrap;
-      width: auto
-    }
-
-    @media screen and (-ms-high-contrast:active) {
-      .nsm7Bb-HzV7m-LgbsSe {
-        border: 2px solid windowText;
-        color: windowText
-      }
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe {
-      font-size: 14px;
-      height: 32px;
-      letter-spacing: 0.25px;
-      padding: 0 10px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe {
-      font-size: 11px;
-      height: 20px;
-      letter-spacing: 0.3px;
-      padding: 0 8px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe {
-      padding: 0;
-      width: 40px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.pSzOP-SxQuSe {
-      width: 32px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.purZT-SxQuSe {
-      width: 20px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK {
-      -webkit-border-radius: 20px;
-      border-radius: 20px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK.pSzOP-SxQuSe {
-      -webkit-border-radius: 16px;
-      border-radius: 16px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK.purZT-SxQuSe {
-      -webkit-border-radius: 10px;
-      border-radius: 10px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc {
-      border: none;
-      color: #fff
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.MFS4be-v3pZbf-Ia7Qfc {
-      background-color: #1a73e8
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.MFS4be-JaPV2b-Ia7Qfc {
-      background-color: #202124;
-      color: #e8eaed
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
-      height: 18px;
-      margin-right: 8px;
-      min-width: 18px;
-      width: 18px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
-      height: 14px;
-      min-width: 14px;
-      width: 14px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
-      height: 10px;
-      min-width: 10px;
-      width: 10px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
-      margin-left: 8px;
-      margin-right: -4px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
-      margin: 0;
-      padding: 10px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
-      padding: 8px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c {
-      padding: 4px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
-      -webkit-border-top-left-radius: 3px;
-      border-top-left-radius: 3px;
-      -webkit-border-bottom-left-radius: 3px;
-      border-bottom-left-radius: 3px;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: flex;
-      justify-content: center;
-      -webkit-align-items: center;
-      align-items: center;
-      background-color: #fff;
-      height: 36px;
-      margin-left: -10px;
-      margin-right: 12px;
-      min-width: 36px;
-      width: 36px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf .nsm7Bb-HzV7m-LgbsSe-Bz112c,
-    .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf .nsm7Bb-HzV7m-LgbsSe-Bz112c {
-      margin: 0;
-      padding: 0
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
-      height: 28px;
-      margin-left: -8px;
-      margin-right: 10px;
-      min-width: 28px;
-      width: 28px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
-      height: 16px;
-      margin-left: -6px;
-      margin-right: 8px;
-      min-width: 16px;
-      width: 16px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
-      -webkit-border-radius: 3px;
-      border-radius: 3px;
-      margin-left: 2px;
-      margin-right: 0;
-      padding: 0
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
-      -webkit-border-radius: 18px;
-      border-radius: 18px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
-      -webkit-border-radius: 14px;
-      border-radius: 14px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
-      -webkit-border-radius: 8px;
-      border-radius: 8px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-align-items: center;
-      align-items: center;
-      -webkit-flex-direction: row;
-      flex-direction: row;
-      justify-content: space-between;
-      -webkit-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-      height: 100%;
-      position: relative;
-      width: 100%
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe .oXtfBe-l4eHX {
-      justify-content: center
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-BPrWId {
-      -webkit-flex-grow: 1;
-      flex-grow: 1;
-      font-family: "Google Sans", arial, sans-serif;
-      font-weight: 500;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      vertical-align: top
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-BPrWId {
-      font-weight: 300
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe .oXtfBe-l4eHX .nsm7Bb-HzV7m-LgbsSe-BPrWId {
-      -webkit-flex-grow: 0;
-      flex-grow: 0
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-MJoBVe {
-      -webkit-transition: background-color .218s;
-      transition: background-color .218s;
-      bottom: 0;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe:hover,
-    .nsm7Bb-HzV7m-LgbsSe:focus {
-      -webkit-box-shadow: none;
-      box-shadow: none;
-      border-color: #d2e3fc;
-      outline: none
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe:hover .nsm7Bb-HzV7m-LgbsSe-MJoBVe,
-    .nsm7Bb-HzV7m-LgbsSe:focus .nsm7Bb-HzV7m-LgbsSe-MJoBVe {
-      background: rgba(66, 133, 244, .04)
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe:active .nsm7Bb-HzV7m-LgbsSe-MJoBVe {
-      background: rgba(66, 133, 244, .1)
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:hover .nsm7Bb-HzV7m-LgbsSe-MJoBVe,
-    .nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:focus .nsm7Bb-HzV7m-LgbsSe-MJoBVe {
-      background: rgba(255, 255, 255, .24)
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:active .nsm7Bb-HzV7m-LgbsSe-MJoBVe {
-      background: rgba(255, 255, 255, .32)
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe .n1UuX-DkfjY {
-      -webkit-border-radius: 50%;
-      border-radius: 50%;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: flex;
-      height: 20px;
-      margin-left: -4px;
-      margin-right: 8px;
-      min-width: 20px;
-      width: 20px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId {
-      font-family: "Roboto";
-      font-size: 12px;
-      text-align: left
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .ssJRIf,
-    .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff .fmcmS {
-      overflow: hidden;
-      text-overflow: ellipsis
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-align-items: center;
-      align-items: center;
-      color: #5f6368;
-      fill: #5f6368;
-      font-size: 11px;
-      font-weight: 400
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.jVeSEe.MFS4be-Ia7Qfc .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff {
-      color: #e8eaed;
-      fill: #e8eaed
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff .Bz112c {
-      height: 18px;
-      margin: -3px -3px -3px 2px;
-      min-width: 18px;
-      width: 18px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
-      -webkit-border-top-left-radius: 0;
-      border-top-left-radius: 0;
-      -webkit-border-bottom-left-radius: 0;
-      border-bottom-left-radius: 0;
-      -webkit-border-top-right-radius: 3px;
-      border-top-right-radius: 3px;
-      -webkit-border-bottom-right-radius: 3px;
-      border-bottom-right-radius: 3px;
-      margin-left: 12px;
-      margin-right: -10px
-    }
-
-    .nsm7Bb-HzV7m-LgbsSe.jVeSEe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf {
-      -webkit-border-radius: 18px;
-      border-radius: 18px
-    }
-
-    .L5Fo6c-sM5MNb {
-      border: 0;
-      display: block;
-      left: 0;
-      position: relative;
-      top: 0
-    }
-
-    .L5Fo6c-bF1uUb {
-      -webkit-border-radius: 4px;
-      border-radius: 4px;
-      bottom: 0;
-      cursor: pointer;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0
-    }
-
-    .L5Fo6c-bF1uUb:focus {
-      border: none;
-      outline: none
-    }
-
-    sentinel {}
-  </style>
-  <meta http-equiv="origin-trial"
-    content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
-  <style data-emotion="css" data-s=""></style>
-  <link rel="stylesheet" type="text/css" href="static/css/1460.7b6408bd.chunk.css">
-  <link rel="stylesheet" type="text/css" href="static/css/9538.6cdfd01a.chunk.css">
-  <style data-styled="" data-styled-version="4.4.1"></style>
-  <link rel="stylesheet" type="text/css" href="static/css/106.6e730c95.chunk.css">
-  <style type="text/css">
-    .style-module_starRatingWrap__q-lJC {
-      display: inline-block;
-      touch-action: none
-    }
-
-    .style-module_simpleStarRating__nWUxf {
-      display: inline-block;
-      overflow: hidden;
-      position: relative;
-      touch-action: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-      vertical-align: middle;
-      white-space: nowrap
-    }
-
-    .style-module_fillIcons__6---A {
-      display: inline-block;
-      overflow: hidden;
-      position: absolute;
-      top: 0;
-      white-space: nowrap
-    }
-
-    .style-module_emptyIcons__Bg-FZ {
-      display: inline-block
-    }
-
-    .style-module_tooltip__tKc3i {
-      background-color: #333;
-      border-radius: 5px;
-      color: #fff;
-      display: inline-block;
-      padding: 5px 15px;
-      vertical-align: middle
-    }
-  </style>
-</head>
-
-<body>
-  <script id="noPrint">var noPrint = !0, noCopy = !0, noScreenshot = !0, autoBlur = !0</script>
-  <script>var freestar = freestar || {}; freestar.queue = freestar.queue || [], freestar.queue.push((function () {googletag.pubads().set("page_url", "https://clickasnap.com")}))</script>
-  <script
-    type="text/javascript">function toBlur() {autoBlur && document.getElementById("Pro") && (document.getElementById("Pro").style.cssText = "-webkit-filter: blur(5px);-moz-filter: blur(5px);-ms-filter: blur(5px);-o-filter: blur(5px);filter: blur(5px);")} function toClear() {document.getElementById("Pro") && (document.getElementById("Pro").style.cssText = "-webkit-filter: blur(0px);-moz-filter: blur(0px);-ms-filter: blur(0px);-o-filter: blur(0px);filter: blur(0px);")} noCopy && (document.onkeydown = function () {1 != event.ctrlKey && 1 != event.metaKey || 83 != event.keyCode || event.preventDefault(), 1 != event.ctrlKey && 1 != event.metaKey || 83 != event.code || event.preventDefault()}), document.onmouseenter = function (e) {toClear()}, document.onmouseleave = function (e) {toBlur()}, document.onblur = function (e) {toBlur()}, document.addEventListener("keyup", (e => {"PrintScreen" == e.key && noScreenshot && navigator.clipboard.writeText("")})), document.addEventListener("keydown", (e => {e.ctrlKey && "p" == e.key && noPrint && (e.cancelBubble = !0, e.preventDefault(), e.stopImmediatePropagation())}))</script>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T3CXDMX" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript><noscript>You need to enable JavaScript to run this
-    app.</noscript>
-  <div id="root">
-    <div class="css-1mpmnts">
-      <nav>
-        <div class="container">
-          <div class="row align-items-center full-width">
-            <div class="col col-12 px-0">
-              <div class="d-flex justify-content-between">
-                <div class="d-flex align-items-center"><img tabindex="0" class="cursor-pointer me-4"
-                    src="static/media/logo-purple-black.3b1ac9bea3419009d3d2ed80e7fff9a5.svg" alt="logo"><a
-                    class="nav-link mx-3" href="#">Explore</a><a class="nav-link mx-3"
-                    href="#">Marketplace</a><a class="nav-link mx-3" href="#">How it works</a>
-                </div>
-                <div class="d-flex align-items-center">
-                  <div class="d-flex align-items-center">
-                    <div class="icon-box icon-btn-wrapper"><button type="button"
-                        class="btn undefined  borderless     btn-fs" aria-label="[object Object]">
-                        <div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false"
-                            data-prefix="far" data-icon="magnifying-glass"
-                            class="svg-inline--fa fa-magnifying-glass icon black  text" role="img"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                            <path fill="currentColor"
-                              d="M368 208A160 160 0 1 0 48 208a160 160 0 1 0 320 0zM337.1 371.1C301.7 399.2 256.8 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 48.8-16.8 93.7-44.9 129.1L505 471c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L337.1 371.1z">
-                            </path>
-                          </svg></div>
-                      </button></div><button type="button" class="btn primary outline     mx-2 btn-fs"
-                      aria-label="Log in">Log in</button><button type="button" class="btn primary      ms-2 btn-fs"
-                      aria-label="Sign up">Sign up</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <div class="container" style="box-sizing: border-box;">
-        <section class="photo-details">
-          <div class="row align-items-center">
-            <div class="col col-auto pt-2 pb-1"><img
-                src="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/28b8eb45-6141-40e0-98d9-fe5047153b8d"
-                class="Show_cursor-pointer__iRQxx" tabindex="0"
-                style="max-width: 100%; height: 44px; width: 44px; border-radius: 100%;"></div>
-            <div class="col Show_cursor-pointer__iRQxx" tabindex="0">DajanaAnicic</div>
-            <div class="col col-auto px-md-0" style="position: relative;">
-              <div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs"
-                  aria-label="[object Object]">
-                  <div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false"
-                      data-prefix="fas" data-icon="ellipsis" class="svg-inline--fa fa-ellipsis icon black  text"
-                      role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                      <path fill="currentColor"
-                        d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z">
-                      </path>
-                    </svg></div>
-                </button></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 p-0">
-              <div class="Show_image-container__D8pQq">
-                <div class="Show_right-overlay__viAy1">
-                  <div class="icon-box icon-btn-wrapper"><button type="button"
-                      class="btn undefined  borderless     btn-fs" aria-label="[object Object]">
-                      <div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false"
-                          data-prefix="fas" data-icon="up-right-and-down-left-from-center"
-                          class="svg-inline--fa fa-up-right-and-down-left-from-center icon black  text" role="img"
-                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                          <path fill="currentColor"
-                            d="M344 0H488c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-39-39-87 87c-9.4 9.4-24.6 9.4-33.9 0l-32-32c-9.4-9.4-9.4-24.6 0-33.9l87-87L327 41c-6.9-6.9-8.9-17.2-5.2-26.2S334.3 0 344 0zM168 512H24c-13.3 0-24-10.7-24-24V344c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l39 39 87-87c9.4-9.4 24.6-9.4 33.9 0l32 32c9.4 9.4 9.4 24.6 0 33.9l-87 87 39 39c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8z">
-                          </path>
-                        </svg></div>
-                    </button></div>
-                </div><img class="Show_solo-image__qnNA9 Show_cursor-zoom-in__pHVBt" tabindex="0" style=""
-                  src="https://d1unuvan7ts7ur.cloudfront.net/0x750/filters:strip_exif()/28b8eb45-6141-40e0-98d9-fe5047153b8d/01H8KGB5SN5CTMNM631JS6Y5J3">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col col-12 col-md-7 order-md-2 py-3">
-              <div class="row align-items-center justify-content-center justify-content-md-end"
-                style="position: relative;">
-                <div class="col col-auto ps-0 pe-1 px-sm-2 py-1"><button type="button"
-                    class="btn primary outline borderless     btn-fs" aria-label="1225"><span
-                      class="icon-container"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="eye"
-                        class="svg-inline--fa fa-eye " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 576 512">
-                        <path fill="currentColor"
-                          d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z">
-                        </path>
-                      </svg></span>1225</button></div>
-                <div class="col col-auto ps-0 pe-1 px-sm-2 py-1"><button type="button"
-                    class="btn primary outline      btn-fs" aria-label="76"><span class="icon-container"><svg
-                        aria-hidden="true" focusable="false" data-prefix="fas" data-icon="comment"
-                        class="svg-inline--fa fa-comment " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512">
-                        <path fill="currentColor"
-                          d="M512 240c0 114.9-114.6 208-256 208c-37.1 0-72.3-6.4-104.1-17.9c-11.9 8.7-31.3 20.6-54.3 30.6C73.6 471.1 44.7 480 16 480c-6.5 0-12.3-3.9-14.8-9.9c-2.5-6-1.1-12.8 3.4-17.4l0 0 0 0 0 0 0 0 .3-.3c.3-.3 .7-.7 1.3-1.4c1.1-1.2 2.8-3.1 4.9-5.7c4.1-5 9.6-12.4 15.2-21.6c10-16.6 19.5-38.4 21.4-62.9C17.7 326.8 0 285.1 0 240C0 125.1 114.6 32 256 32s256 93.1 256 208z">
-                        </path>
-                      </svg></span>76</button></div>
-                <div class="col col-auto ps-0 pe-1 px-sm-2 py-1"><button type="button"
-                    class="btn primary outline      btn-fs" aria-label="Share"><span class="icon-container"><svg
-                        aria-hidden="true" focusable="false" data-prefix="fas" data-icon="share"
-                        class="svg-inline--fa fa-share " role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512">
-                        <path fill="currentColor"
-                          d="M307 34.8c-11.5 5.1-19 16.6-19 29.2v64H176C78.8 128 0 206.8 0 304C0 417.3 81.5 467.9 100.2 478.1c2.5 1.4 5.3 1.9 8.1 1.9c10.9 0 19.7-8.9 19.7-19.7c0-7.5-4.3-14.4-9.8-19.5C108.8 431.9 96 414.4 96 384c0-53 43-96 96-96h96v64c0 12.6 7.4 24.1 19 29.2s25 3 34.4-5.4l160-144c6.7-6.1 10.6-14.7 10.6-23.8s-3.8-17.7-10.6-23.8l-160-144c-9.4-8.5-22.9-10.6-34.4-5.4z">
-                        </path>
-                      </svg></span>Share</button></div>
-              </div>
-            </div>
-            <div class="col d-flex justify-content-center justify-content-md-start col-12 col-md-5 pt-md-3 h-100"
-              style="min-height: 86px;">
-              <div>
-                <div>
-                  <div class="starRating_starRatingContainer__C50G+"><span class="style-module_starRatingWrap__q-lJC"
-                      style="direction: ltr;"><span
-                        class="style-module_simpleStarRating__nWUxf react-simple-star-rating" aria-hidden="true"
-                        style="cursor: not-allowed;"><span class="style-module_emptyIcons__Bg-FZ empty-icons"
-                          style="color: rgb(204, 204, 204);"><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                            data-icon="star" class="svg-inline--fa fa-star fa-xl " role="img"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="margin-right: 5px;">
-                            <path fill="currentColor"
-                              d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
-                            </path>
-                          </svg><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
-                            class="svg-inline--fa fa-star fa-xl " role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512" style="margin-right: 5px;">
-                            <path fill="currentColor"
-                              d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
-                            </path>
-                          </svg><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
-                            class="svg-inline--fa fa-star fa-xl " role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512" style="margin-right: 5px;">
-                            <path fill="currentColor"
-                              d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
-                            </path>
-                          </svg><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
-                            class="svg-inline--fa fa-star fa-xl " role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512" style="margin-right: 5px;">
-                            <path fill="currentColor"
-                              d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
-                            </path>
-                          </svg><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
-                            class="svg-inline--fa fa-star fa-xl " role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512" style="margin-right: 5px;">
-                            <path fill="currentColor"
-                              d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
-                            </path>
-                          </svg></span><span class="style-module_fillIcons__6---A filled-icons" title="0 out of 5"
-                          style="left: 0px; color: rgb(71, 33, 145); transition: width 0.2s ease 0s, color 0.2s ease 0s; width: 0%;"><svg
-                            aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
-                            class="svg-inline--fa fa-star fa-xl " role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512" style="margin-right: 5px;">
-                            <path fill="currentColor"
-                              d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
-                            </path>
-                          </svg><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
-                            class="svg-inline--fa fa-star fa-xl " role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512" style="margin-right: 5px;">
-                            <path fill="currentColor"
-                              d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
-                            </path>
-                          </svg><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
-                            class="svg-inline--fa fa-star fa-xl " role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512" style="margin-right: 5px;">
-                            <path fill="currentColor"
-                              d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
-                            </path>
-                          </svg><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
-                            class="svg-inline--fa fa-star fa-xl " role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512" style="margin-right: 5px;">
-                            <path fill="currentColor"
-                              d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
-                            </path>
-                          </svg><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
-                            class="svg-inline--fa fa-star fa-xl " role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512" style="margin-right: 5px;">
-                            <path fill="currentColor"
-                              d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z">
-                            </path>
-                          </svg></span></span></span>
-                    <div>
-                      <p class="body sm starRating_ratingText__pQHpN"> </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col col-12 col-md-5 order-md-1">
-              <h1 class="head six mt-1 mb-2 mt-md-3" style="overflow-wrap: break-word;">BLACK BEAUTY </h1>
-              <p class="body md mt-2">24th August 2023</p>
-              <p class="body sm">In the mountains where life begins.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div classname="col-12">
-              <p>Category: <span class="body bolder">Wildlife</span></p>
-            </div>
-            <div class="col-auto px-1"><button class="btn undefined outline     text black pale btn-fs"
-                aria-label="#horse">#horse</button></div>
-            <div class="col-auto px-1"><button class="btn undefined outline     text black pale btn-fs"
-                aria-label="#black">#black</button></div>
-            <div class="col-auto px-1"><button class="btn undefined outline     text black pale btn-fs"
-                aria-label="#beauty">#beauty</button></div>
-            <div class="col-auto px-1"><button class="btn undefined outline     text black pale btn-fs"
-                aria-label="#blackbeauty">#blackbeauty</button></div>
-            <div class="col-auto px-1"><button class="btn undefined outline     text black pale btn-fs"
-                aria-label="#wild">#wild</button></div>
-            <div class="col-auto px-1"><button class="btn undefined outline     text black pale btn-fs"
-                aria-label="#life">#life</button></div>
-            <div class="col-auto px-1"><button class="btn undefined outline     text black pale btn-fs"
-                aria-label="#wildlife">#wildlife</button></div>
-            <div class="col-auto px-1"><button class="btn undefined outline     text black pale btn-fs"
-                aria-label="#mountains">#mountains</button></div>
-            <div class="col-auto px-1"><button class="btn undefined outline     text black pale btn-fs"
-                aria-label="#strength">#strength</button></div>
-            <div class="col-auto px-1"><button class="btn undefined outline     text black pale btn-fs"
-                aria-label="#nature">#nature</button></div>
-            <div class="col-auto px-1"><button class="btn undefined outline     text black pale btn-fs"
-                aria-label="#photo">#photo</button></div>
-          </div>
-        </section>
-        <section class="Show_similar-photos__YsDii">
-          <div class="d-flex justify-content-start">
-            <p class="head seven">Similar images</p>
-          </div>
-          <div
-            style="display: flex; flex-direction: row; place-content: stretch center; box-sizing: border-box; width: 100%; gap: 0px;">
-            <div
-              style="display: flex; flex-direction: column; place-content: stretch flex-start; flex: 1 1 0%; width: 0px; gap: 0px;">
-              <div class="p-2" tabindex="0">
-                <div data-testid="card-container" class="card borderless">
-                  <div class="card-header "><img
-                      src="https://d1unuvan7ts7ur.cloudfront.net/0x750/filters:strip_exif()/d2d0d968-2bbd-4ecc-b721-00df87047bd3/01GXWFG9V220CFWV5TS8XKKJ4S"
-                      class="Show_similar-photos-card__-2es0" alt="similar-image"></div>
-                </div>
-              </div>
-              <div class="p-2" tabindex="0">
-                <div data-testid="card-container" class="card borderless">
-                  <div class="card-header "><img src="https://cdn.clickasnap.com/0x1000/2723025/img-3142-1.jpg"
-                      class="Show_similar-photos-card__-2es0" alt="similar-image"></div>
-                </div>
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; place-content: stretch flex-start; flex: 1 1 0%; width: 0px; gap: 0px;">
-              <div class="p-2" tabindex="0">
-                <div data-testid="card-container" class="card borderless">
-                  <div class="card-header "><img
-                      src="https://d1unuvan7ts7ur.cloudfront.net/0x750/filters:strip_exif()/3ef4308e-dbfe-482f-b7de-e07be5cd2892/01HAFC2S9GMRDBV4QX9S09F8AQ"
-                      class="Show_similar-photos-card__-2es0" alt="similar-image"></div>
-                </div>
-              </div>
-              <div class="p-2" tabindex="0">
-                <div data-testid="card-container" class="card borderless">
-                  <div class="card-header "><img
-                      src="https://d1unuvan7ts7ur.cloudfront.net/0x750/filters:strip_exif()/9f6d7ea9-3845-4116-9848-d7ec2b4950d8/01H6MQ8QPYQ9RB5FKYH38JP90X"
-                      class="Show_similar-photos-card__-2es0" alt="similar-image"></div>
-                </div>
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; place-content: stretch flex-start; flex: 1 1 0%; width: 0px; gap: 0px;">
-              <div class="p-2" tabindex="0">
-                <div data-testid="card-container" class="card borderless">
-                  <div class="card-header "><img
-                      src="https://d1unuvan7ts7ur.cloudfront.net/0x750/filters:strip_exif()/38bff954-fe43-4153-a481-ea7fabea46aa/01H6KFKPYMHEVFBX5GDHXZKJR0"
-                      class="Show_similar-photos-card__-2es0" alt="similar-image"></div>
-                </div>
-              </div>
-              <div class="p-2" tabindex="0">
-                <div data-testid="card-container" class="card borderless">
-                  <div class="card-header "><img src="https://cdn.clickasnap.com/0x1000/3308670/treesurgen.jpg"
-                      class="Show_similar-photos-card__-2es0" alt="similar-image"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex justify-content-center my-5"><a class="Show_nav-link__ZzDrY" href="/explore">Explore
-              more...</a></div>
-        </section>
-        <section class="comments py-5">
-          <p color="#000000" class="css-135ddp7">Comments</p>
-          <div class="infinite-scroll-component__outerdiv">
-            <div class="infinite-scroll-component " style="height: auto; overflow: auto;">
-              <div class="css-1d7lamm">
-                <div class="css-1bi3h5s"><img
-                    src="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/85a7908f-a544-4bc9-93a2-31f837594eb4?ua=1699280827524"
-                    url="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/85a7908f-a544-4bc9-93a2-31f837594eb4?ua=1699280827524"
-                    data-testid="user-image" class="css-16eqi1w"></div>
-                <div width="100%" class="css-1474ka5">
-                  <div>
-                    <div class="css-k01lg3">
-                      <p font-size="18" color="#000000" cursor="pointer" class="css-1diayk6">MvPotraits</p>
-                      <p class="css-14ymyh5">Posted 3 days ago</p>
-                    </div>
-                  </div>
-                  <div class="css-1lw3uh5">
-                    <div class="css-1rzjp5w">
-                      <div role="Pro" class="css-ioh8qj"><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                          data-icon="check" class="svg-inline--fa fa-check  css-sr2xl" role="#34B9F8"
-                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="#fff">
-                          <path fill="currentColor"
-                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                          </path>
-                        </svg>
-                        <p class="css-14eu70w">Pro</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="css-13oxqir">
-                <p class="css-1wt3vgl"><span>Nice Shot! </span><a href="https://www.clickasnap.com/profile/MvPotraits"
-                    target="_blank" rel="noopener noreferrer">https://www.clickasnap.com/profile/MvPotraits</a><span>
-                    check my amazing potraits, please do support, Thankyou❤️</span></p>
-              </div>
-              <div class="css-q7bg1k"></div>
-              <div class="css-1d7lamm">
-                <div class="css-1bi3h5s"><img
-                    src="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/e0ff7cbb-8ace-41f9-b8cc-65a36c00539d?ua=1699279777481"
-                    url="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/e0ff7cbb-8ace-41f9-b8cc-65a36c00539d?ua=1699279777481"
-                    data-testid="user-image" class="css-mp97ds"></div>
-                <div width="100%" class="css-1474ka5">
-                  <div>
-                    <div class="css-k01lg3">
-                      <p font-size="18" color="#000000" cursor="pointer" class="css-1diayk6">Berr</p>
-                      <p class="css-14ymyh5">Posted 3 days ago</p>
-                    </div>
-                  </div>
-                  <div class="css-1lw3uh5">
-                    <div class="css-1rzjp5w">
-                      <div role="Free" class="css-ioh8qj"><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                          data-icon="check" class="svg-inline--fa fa-check  css-18pvogf" role="#5AAF5B"
-                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="#fff">
-                          <path fill="currentColor"
-                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                          </path>
-                        </svg>
-                        <p class="css-14eu70w">Free</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="css-13oxqir">
-                <p class="css-1wt3vgl"><span>🥰🥰</span></p>
-              </div>
-              <div class="css-q7bg1k"></div>
-              <div class="css-1d7lamm">
-                <div class="css-1bi3h5s"><img
-                    src="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/dea42b96-c406-48db-ac57-fbc962af2267?ua=1699120531467"
-                    url="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/dea42b96-c406-48db-ac57-fbc962af2267?ua=1699120531467"
-                    data-testid="user-image" class="css-cs26jc"></div>
-                <div width="100%" class="css-1474ka5">
-                  <div>
-                    <div class="css-k01lg3">
-                      <p font-size="18" color="#000000" cursor="pointer" class="css-1diayk6">Lewies</p>
-                      <p class="css-14ymyh5">Posted 4 days ago</p>
-                    </div>
-                  </div>
-                  <div class="css-1lw3uh5">
-                    <div class="css-1rzjp5w">
-                      <div role="Free" class="css-ioh8qj"><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                          data-icon="check" class="svg-inline--fa fa-check  css-18pvogf" role="#5AAF5B"
-                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="#fff">
-                          <path fill="currentColor"
-                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                          </path>
-                        </svg>
-                        <p class="css-14eu70w">Free</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="css-13oxqir">
-                <p class="css-1wt3vgl"><span>Beautiful capture. </span></p>
-                <div class="css-2utwwr">
-                  <div class="css-1d7lamm">
-                    <div class="css-1bi3h5s"><img
-                        src="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/28b8eb45-6141-40e0-98d9-fe5047153b8d?ua=1699281909989"
-                        url="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/28b8eb45-6141-40e0-98d9-fe5047153b8d?ua=1699281909989"
-                        data-testid="user-image" class="css-153kkhm"></div>
-                    <div width="100%" class="css-1474ka5">
-                      <div>
-                        <div class="css-k01lg3">
-                          <p font-size="14" color="#000000" cursor="pointer" class="css-1upxss6">DajanaAnicic</p>
-                          <p class="css-14ymyh5">Posted 4 days ago</p>
-                        </div>
-                      </div>
-                      <div class="css-1lw3uh5">
-                        <div class="css-1rzjp5w">
-                          <div role="Pro" class="css-ioh8qj"><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                              data-icon="check" class="svg-inline--fa fa-check  css-sr2xl" role="#34B9F8"
-                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="#fff">
-                              <path fill="currentColor"
-                                d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                              </path>
-                            </svg>
-                            <p class="css-14eu70w">Pro</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="css-1grogww">
-                    <p class="css-1wt3vgl">Thank you! 🤗</p>
-                  </div>
-                </div>
-              </div>
-              <div class="css-q7bg1k"></div>
-              <div class="css-1d7lamm">
-                <div class="css-1bi3h5s"><img
-                    src="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/26953ce6-5c7a-4e68-b308-cedcb7642c21?ua=1699277562533"
-                    url="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/26953ce6-5c7a-4e68-b308-cedcb7642c21?ua=1699277562533"
-                    data-testid="user-image" class="css-slzdcr"></div>
-                <div width="100%" class="css-1474ka5">
-                  <div>
-                    <div class="css-k01lg3">
-                      <p font-size="18" color="#000000" cursor="pointer" class="css-1diayk6">bigdeloo</p>
-                      <p class="css-14ymyh5">Posted 5 days ago</p>
-                    </div>
-                  </div>
-                  <div class="css-1lw3uh5">
-                    <div class="css-1rzjp5w">
-                      <div role="Free" class="css-ioh8qj"><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                          data-icon="check" class="svg-inline--fa fa-check  css-18pvogf" role="#5AAF5B"
-                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="#fff">
-                          <path fill="currentColor"
-                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                          </path>
-                        </svg>
-                        <p class="css-14eu70w">Free</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="css-13oxqir">
-                <p class="css-1wt3vgl"><span>عالیه</span></p>
-              </div>
-              <div class="css-q7bg1k"></div>
-              <div class="css-1d7lamm">
-                <div class="css-1bi3h5s"><img
-                    src="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/39372726-4a4a-41dd-a0a6-bf0833524d02?ua=1699278074625"
-                    url="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/39372726-4a4a-41dd-a0a6-bf0833524d02?ua=1699278074625"
-                    data-testid="user-image" class="css-l58u4p"></div>
-                <div width="100%" class="css-1474ka5">
-                  <div>
-                    <div class="css-k01lg3">
-                      <p font-size="18" color="#000000" cursor="pointer" class="css-1diayk6">daredare_photographer</p>
-                      <p class="css-14ymyh5">Posted 8 days ago</p>
-                    </div>
-                  </div>
-                  <div class="css-1lw3uh5">
-                    <div class="css-1rzjp5w">
-                      <div role="Pro" class="css-ioh8qj"><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                          data-icon="check" class="svg-inline--fa fa-check  css-sr2xl" role="#34B9F8"
-                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="#fff">
-                          <path fill="currentColor"
-                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                          </path>
-                        </svg>
-                        <p class="css-14eu70w">Pro</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="css-13oxqir">
-                <p class="css-1wt3vgl"><span>Great image </span></p>
-                <div class="css-2utwwr">
-                  <div class="css-1d7lamm">
-                    <div class="css-1bi3h5s"><img
-                        src="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/28b8eb45-6141-40e0-98d9-fe5047153b8d?ua=1699281909989"
-                        url="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/28b8eb45-6141-40e0-98d9-fe5047153b8d?ua=1699281909989"
-                        data-testid="user-image" class="css-153kkhm"></div>
-                    <div width="100%" class="css-1474ka5">
-                      <div>
-                        <div class="css-k01lg3">
-                          <p font-size="14" color="#000000" cursor="pointer" class="css-1upxss6">DajanaAnicic</p>
-                          <p class="css-14ymyh5">Posted 8 days ago</p>
-                        </div>
-                      </div>
-                      <div class="css-1lw3uh5">
-                        <div class="css-1rzjp5w">
-                          <div role="Pro" class="css-ioh8qj"><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                              data-icon="check" class="svg-inline--fa fa-check  css-sr2xl" role="#34B9F8"
-                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="#fff">
-                              <path fill="currentColor"
-                                d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                              </path>
-                            </svg>
-                            <p class="css-14eu70w">Pro</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="css-1grogww">
-                    <p class="css-1wt3vgl">Thank you! 😊</p>
-                  </div>
-                </div>
-              </div>
-              <div class="css-q7bg1k"></div>
-              <div class="css-1d7lamm">
-                <div class="css-1bi3h5s"><img
-                    src="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/94b103d3-ab3e-4eb7-aa0c-9b24bb49191d?ua=1699229041141"
-                    url="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/94b103d3-ab3e-4eb7-aa0c-9b24bb49191d?ua=1699229041141"
-                    data-testid="user-image" class="css-ko3t2r"></div>
-                <div width="100%" class="css-1474ka5">
-                  <div>
-                    <div class="css-k01lg3">
-                      <p font-size="18" color="#000000" cursor="pointer" class="css-1diayk6">pro100master</p>
-                      <p class="css-14ymyh5">Posted 8 days ago</p>
-                    </div>
-                  </div>
-                  <div class="css-1lw3uh5">
-                    <div class="css-1rzjp5w">
-                      <div role="Free" class="css-ioh8qj"><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                          data-icon="check" class="svg-inline--fa fa-check  css-18pvogf" role="#5AAF5B"
-                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="#fff">
-                          <path fill="currentColor"
-                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                          </path>
-                        </svg>
-                        <p class="css-14eu70w">Free</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="css-13oxqir">
-                <p class="css-1wt3vgl"><a
-                    href="https://share.clickasnap.com/profile/EmCLiving/photo/01HDVGDDBWQ3SANKT959NTAX8C"
-                    target="_blank"
-                    rel="noopener noreferrer">https://share.clickasnap.com/profile/EmCLiving/photo/01HDVGDDBWQ3SANKT959NTAX8C</a>
-                </p>
-              </div>
-              <div class="css-q7bg1k"></div>
-              <div class="css-1d7lamm">
-                <div class="css-1bi3h5s"><img
-                    src="https://cdn.clickasnap.com/175x175-cover/_profile/806020_5.JPG?ua=1699278990145"
-                    url="https://cdn.clickasnap.com/175x175-cover/_profile/806020_5.JPG?ua=1699278990145"
-                    data-testid="user-image" class="css-142xaf2"></div>
-                <div width="100%" class="css-1474ka5">
-                  <div>
-                    <div class="css-k01lg3">
-                      <p font-size="18" color="#000000" cursor="pointer" class="css-1diayk6">kevinkoeppen67</p>
-                      <p class="css-14ymyh5">Posted 15 days ago</p>
-                    </div>
-                  </div>
-                  <div class="css-1lw3uh5">
-                    <div class="css-1rzjp5w">
-                      <div role="Verified" class="css-ioh8qj"><svg aria-hidden="true" focusable="false"
-                          data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check  css-1fjd66n"
-                          role="#04A4FC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="#fff">
-                          <path fill="currentColor"
-                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                          </path>
-                        </svg>
-                        <p class="css-14eu70w">Verified</p>
-                      </div>
-                      <div role="Pro" class="css-ioh8qj"><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                          data-icon="check" class="svg-inline--fa fa-check  css-sr2xl" role="#34B9F8"
-                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="#fff">
-                          <path fill="currentColor"
-                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                          </path>
-                        </svg>
-                        <p class="css-14eu70w">Pro</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="css-13oxqir">
-                <p class="css-1wt3vgl"><span>The foggy landscape provides a fantastic backdrop to this black
-                    beauty.</span></p>
-                <div class="css-2utwwr">
-                  <div class="css-1d7lamm">
-                    <div class="css-1bi3h5s"><img
-                        src="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/28b8eb45-6141-40e0-98d9-fe5047153b8d?ua=1699281909989"
-                        url="https://rest-api-prod-us-east-1-799789241931.s3.us-east-1.amazonaws.com/users/28b8eb45-6141-40e0-98d9-fe5047153b8d?ua=1699281909989"
-                        data-testid="user-image" class="css-153kkhm"></div>
-                    <div width="100%" class="css-1474ka5">
-                      <div>
-                        <div class="css-k01lg3">
-                          <p font-size="14" color="#000000" cursor="pointer" class="css-1upxss6">DajanaAnicic</p>
-                          <p class="css-14ymyh5">Posted 15 days ago</p>
-                        </div>
-                      </div>
-                      <div class="css-1lw3uh5">
-                        <div class="css-1rzjp5w">
-                          <div role="Pro" class="css-ioh8qj"><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                              data-icon="check" class="svg-inline--fa fa-check  css-sr2xl" role="#34B9F8"
-                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="#fff">
-                              <path fill="currentColor"
-                                d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
-                              </path>
-                            </svg>
-                            <p class="css-14eu70w">Pro</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="css-1grogww">
-                    <p class="css-1wt3vgl">Thank you very much! 😄</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <div class="Footer_box__2TCGa mt-5 p-4">
-        <div class="container">
-          <div class="row">
-            <div class="col col-12 col-md-3"><img
-                src="/static/media/logo-purple-white.8e8e10419c141d90ed500625c24c76b6.svg" alt="Clickasnap logo"
-                height="40px" width="120px">
-              <p class="head five mt-3">It pays to share™</p>
-            </div>
-            <div class="col col-12 col-md-3 pb-4 pb-md-0">
-              <p class="body bolder mb-2">Discover</p><a class="Footer_nav-link__3tgae" href="/about-us">
-                <p class="my-2">About</p>
-              </a><a class="Footer_nav-link__3tgae"
-                href="https://www.youtube.com/playlist?list=PLDc5zcAMIEBJPYDdUNAHoYK7xul_LjrVa">
-                <p class="my-2">How it works</p>
-              </a><a class="Footer_nav-link__3tgae" href="https://blog.clickasnap.com/faqs/">
-                <p class="my-2">FAQ</p>
-              </a>
-            </div>
-            <div class="col col-12 col-md-3 pb-4 pb-md-0">
-              <p class="body bolder mb-2">Connect</p><a class="Footer_nav-link__3tgae"
-                href="https://forum.clickasnap.com/">
-                <p class="my-2">Forum</p>
-              </a><a class="Footer_nav-link__3tgae" href="https://blog.clickasnap.com/">
-                <p class="my-2">Blog</p>
-              </a><a class="Footer_nav-link__3tgae" href="https://blog.clickasnap.com/faqs/">
-                <p class="my-2">Support</p>
-              </a>
-            </div>
-            <div class="col col-12 col-md-3 pb-4 pb-md-0">
-              <p class="body bolder mb-2">Company</p><a class="Footer_nav-link__3tgae" href="/terms-and-conditions">
-                <p class="my-2">Terms of use</p>
-              </a><a class="Footer_nav-link__3tgae" href="/privacy-policy">
-                <p class="my-2">Privacy policy</p>
-              </a><a class="Footer_nav-link__3tgae" href="/paid-per-view-policy">
-                <p class="my-2">Paid per view policy</p>
-              </a><a class="Footer_nav-link__3tgae" href="/refund-policy">
-                <p class="my-2">Refund policy</p>
-              </a>
-            </div>
-          </div>
-          <div class="row justify-content-center mt-5">
-            <div class="col col-auto px-1 px-md-2">
-              <div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs"
-                  aria-label="[object Object]">
-                  <div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false"
-                      data-prefix="fab" data-icon="facebook" class="svg-inline--fa fa-facebook icon white lg text"
-                      role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                      <path fill="currentColor"
-                        d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z">
-                      </path>
-                    </svg></div>
-                </button></div>
-            </div>
-            <div class="col col-auto px-1 px-md-2">
-              <div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs"
-                  aria-label="[object Object]">
-                  <div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false"
-                      data-prefix="fab" data-icon="instagram" class="svg-inline--fa fa-instagram icon white lg text"
-                      role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                      <path fill="currentColor"
-                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
-                      </path>
-                    </svg></div>
-                </button></div>
-            </div>
-            <div class="col col-auto px-1 px-md-2">
-              <div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs"
-                  aria-label="[object Object]">
-                  <div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false"
-                      data-prefix="fab" data-icon="linkedin" class="svg-inline--fa fa-linkedin icon white lg text"
-                      role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                      <path fill="currentColor"
-                        d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
-                      </path>
-                    </svg></div>
-                </button></div>
-            </div>
-            <div class="col col-auto px-1 px-md-2">
-              <div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs"
-                  aria-label="[object Object]">
-                  <div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false"
-                      data-prefix="fab" data-icon="pinterest" class="svg-inline--fa fa-pinterest icon white lg text"
-                      role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-                      <path fill="currentColor"
-                        d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z">
-                      </path>
-                    </svg></div>
-                </button></div>
-            </div>
-            <div class="col col-auto px-1 px-md-2">
-              <div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs"
-                  aria-label="[object Object]">
-                  <div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false"
-                      data-prefix="fab" data-icon="youtube" class="svg-inline--fa fa-youtube icon white lg text"
-                      role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                      <path fill="currentColor"
-                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
-                      </path>
-                    </svg></div>
-                </button></div>
-            </div>
-            <div class="col col-auto px-1 px-md-2">
-              <div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs"
-                  aria-label="[object Object]">
-                  <div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false"
-                      data-prefix="fab" data-icon="tiktok" class="svg-inline--fa fa-tiktok icon white lg text"
-                      role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                      <path fill="currentColor"
-                        d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z">
-                      </path>
-                    </svg></div>
-                </button></div>
-            </div>
-            <div class="col col-auto px-1 px-md-2">
-              <div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs"
-                  aria-label="[object Object]">
-                  <div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false"
-                      data-prefix="fab" data-icon="x-twitter" class="svg-inline--fa fa-x-twitter icon white lg text"
-                      role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                      <path fill="currentColor"
-                        d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
-                      </path>
-                    </svg></div>
-                </button></div>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col col-auto">
-              <p class="body caption">Copyright © 2023 All Rights Reserved. v1.19.3</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script type="text/javascript"
-    id="">(function (a, b) {a = document.createElement("script"); a.type = "text/javascript"; a.async = !0; a.src = "https://cdn-eu.pagesense.io/js/videscapelimited/457d6ccd02024735b280ee7df035c84e.js"; b = document.getElementsByTagName("script")[0]; b.parentNode.insertBefore(a, b)})(window, "script");</script>
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VLF2RGE5Q9"></script>
-</body>
-
-</html>
+<html lang="en"><head><meta charset="utf-8"><style type="text/css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light";
+  --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin";
+  --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+}
+
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+}
+
+.svg-inline--fa {
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285705em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  top: 0.25em;
+}
+.svg-inline--fa.fa-fw {
+  width: var(--fa-fw-width, 1.25em);
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-counter-scale, 0.25));
+          transform: scale(var(--fa-counter-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: 0.625em;
+  line-height: 0.1em;
+  vertical-align: 0.225em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+  line-height: 0.0833333337em;
+  vertical-align: 0.125em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+  line-height: 0.0714285718em;
+  vertical-align: 0.0535714295em;
+}
+
+.fa-lg {
+  font-size: 1.25em;
+  line-height: 0.05em;
+  vertical-align: -0.075em;
+}
+
+.fa-xl {
+  font-size: 1.5em;
+  line-height: 0.0416666682em;
+  vertical-align: -0.125em;
+}
+
+.fa-2xl {
+  font-size: 2em;
+  line-height: 0.03125em;
+  vertical-align: -0.1875em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: var(--fa-li-margin, 2.5em);
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: calc(var(--fa-li-width, 2em) * -1);
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.08em);
+  padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+}
+
+.fa-pull-left {
+  float: left;
+  margin-right: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right {
+  float: right;
+  margin-left: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  -webkit-animation-name: fa-beat;
+          animation-name: fa-beat;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  -webkit-animation-name: fa-bounce;
+          animation-name: fa-bounce;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  -webkit-animation-name: fa-fade;
+          animation-name: fa-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  -webkit-animation-name: fa-beat-fade;
+          animation-name: fa-beat-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  -webkit-animation-name: fa-flip;
+          animation-name: fa-flip;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  -webkit-animation-name: fa-shake;
+          animation-name: fa-shake;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 2s);
+          animation-duration: var(--fa-animation-duration, 2s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, steps(8));
+          animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+.fa-bounce,
+.fa-fade,
+.fa-beat-fade,
+.fa-flip,
+.fa-pulse,
+.fa-shake,
+.fa-spin,
+.fa-spin-pulse {
+    -webkit-animation-delay: -1ms;
+            animation-delay: -1ms;
+    -webkit-animation-duration: 1ms;
+            animation-duration: 1ms;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+    -webkit-transition-duration: 0s;
+            transition-duration: 0s;
+  }
+}
+@-webkit-keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@-webkit-keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@-webkit-keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@-webkit-keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@-webkit-keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@-webkit-keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  -webkit-transform: rotate(var(--fa-rotate-angle, none));
+          transform: rotate(var(--fa-rotate-angle, none));
+}
+
+.fa-stack {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: var(--fa-stack-z-index, auto);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.sr-only,
+.fa-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:not(:focus),
+.fa-sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse,
+.fa-duotone.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}</style><link rel="icon" href="favicon.ico"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#000000"><meta name="description" content="ClickASnap is the world’s leading photo sharing platform, giving you the chance to get paid to share photos. Sign up for free today."><meta name="og:title" content="ClickASnap | Online Photo Sharing Platform, Share and Earn"><meta name="og:description" content="ClickASnap is the world’s leading photo sharing platform, giving you the chance to get paid to share photos. Sign up for free today."><meta name="og:image" content="logo512.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ClickASnap | Online Photo Sharing Platform, Share and Earn"><meta name="twitter:description" content="ClickASnap is the world’s leading photo sharing platform, giving you the chance to get paid to share photos. Sign up for free today."><meta name="twitter:image" content="logo512.png"><link rel="apple-touch-icon" href="logo192.png"><link rel="manifest" href="manifest.json"><link rel="preconnect" href="https://a.pub.network/" crossorigin=""><link rel="preconnect" href="https://b.pub.network/" crossorigin=""><link rel="preconnect" href="https://c.pub.network/" crossorigin=""><link rel="preconnect" href="https://d.pub.network/" crossorigin=""><link rel="preconnect" href="https://secure.quantserve.com/" crossorigin=""><link rel="preconnect" href="https://rules.quantcount.com/" crossorigin=""><link rel="preconnect" href="https://pixel.quantserve.com/" crossorigin=""><link rel="preconnect" href="https://cmp.quantcast.com/" crossorigin=""><link rel="preconnect" href="https://btloader.com/" crossorigin=""><link rel="preconnect" href="https://api.btloader.com/" crossorigin=""><link rel="“preconnect”" href="“https://cdn.confiant-integrations.net”" crossorigin=""><link rel="stylesheet" href="css/bootstrap-grid.css"><script type="text/javascript" async="" src="https://cdn-eu.pagesense.io/js/videscapelimited/457d6ccd02024735b280ee7df035c84e.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-VLF2RGE5Q9&amp;l=dataLayer&amp;cx=c"></script><script src="https://connect.facebook.net/signals/config/296438716371622?v=2.9.138&amp;r=stable&amp;domain=www.clickasnap.com" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-T3CXDMX"></script><script>document.cookie.includes("CAS_ACCEPT_COOKIES=true")&&(function(e,t,a,c,n){e[c]=e[c]||[],e[c].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],o=t.createElement(a);o.async=!0,o.src="https://www.googletagmanager.com/gtm.js?id=GTM-T3CXDMX",m.parentNode.insertBefore(o,m)}(window,document,"script","dataLayer"),window._mfq=window._mfq||[],function(){var e=document.createElement("script");e.type="text/javascript",e.defer=!0,e.src="//cdn.mouseflow.com/projects/052a3497-1cb4-4b58-9c69-c02ea1aec628.js",document.getElementsByTagName("head")[0].appendChild(e)}())</script><script type="text/javascript" defer="" src="//cdn.mouseflow.com/projects/052a3497-1cb4-4b58-9c69-c02ea1aec628.js"></script><script src="https://accounts.google.com/gsi/client" async="" defer="defer"></script><script>document.cookie.includes("CAS_ACCEPT_COOKIES=true")&&(!function(e,t,n,c,o,a,s){e.fbq||(o=e.fbq=function(){o.callMethod?o.callMethod.apply(o,arguments):o.queue.push(arguments)},e._fbq||(e._fbq=o),o.push=o,o.loaded=!0,o.version="2.0",o.queue=[],(a=t.createElement(n)).async=!0,a.src="https://connect.facebook.net/en_US/fbevents.js",(s=t.getElementsByTagName(n)[0]).parentNode.insertBefore(a,s))}(window,document,"script"),fbq("init","296438716371622"),fbq("track","PageView"))</script><script>var freestar=freestar||{};freestar.queue=freestar.queue||[],freestar.queue.push((function(){googletag.pubads().set("page_url","https://clickasnap.com")}))</script><noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=296438716371622&ev=PageView&noscript=1"/></noscript><title>ClickASnap</title>
+
+  <!-- THE UNKNOWN SCRIPT -->  
+  <!-- <script defer="defer" src="static/js/main.60136ae2.js"></script> -->
+  
+  
+  <link href="static/css/main.3eb6b5b2.css" rel="stylesheet"><style id="googleidentityservice_button_styles">.qJTHM{-webkit-user-select:none;color:#202124;direction:ltr;-webkit-touch-callout:none;font-family:"Roboto-Regular",arial,sans-serif;-webkit-font-smoothing:antialiased;font-weight:400;margin:0;overflow:hidden;-webkit-text-size-adjust:100%}.ynRLnc{left:-9999px;position:absolute;top:-9999px}.L6cTce{display:none}.bltWBb{word-break:break-all}.hSRGPd{color:#1a73e8;cursor:pointer;font-weight:500;text-decoration:none}.Bz112c-W3lGp{height:16px;width:16px}.Bz112c-E3DyYd{height:20px;width:20px}.Bz112c-r9oPif{height:24px;width:24px}.Bz112c-uaxL4e{-webkit-border-radius:10px;border-radius:10px}.LgbsSe-Bz112c{display:block}.S9gUrf-YoZ4jf,.S9gUrf-YoZ4jf *{border:none;margin:0;padding:0}.fFW7wc-ibnC6b>.aZ2wEe>div{border-color:#4285f4}.P1ekSe-ZMv3u>div:nth-child(1){background-color:#1a73e8!important}.P1ekSe-ZMv3u>div:nth-child(2),.P1ekSe-ZMv3u>div:nth-child(3){background-image:linear-gradient(to right,rgba(255,255,255,.7),rgba(255,255,255,.7)),linear-gradient(to right,#1a73e8,#1a73e8)!important}.haAclf{display:inline-block}.nsm7Bb-HzV7m-LgbsSe{-webkit-border-radius:4px;border-radius:4px;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-transition:background-color .218s,border-color .218s;transition:background-color .218s,border-color .218s;-webkit-user-select:none;-webkit-appearance:none;background-color:#fff;background-image:none;border:1px solid #dadce0;color:#3c4043;cursor:pointer;font-family:"Google Sans",arial,sans-serif;font-size:14px;height:40px;letter-spacing:0.25px;outline:none;overflow:hidden;padding:0 12px;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:auto}@media screen and (-ms-high-contrast:active){.nsm7Bb-HzV7m-LgbsSe{border:2px solid windowText;color:windowText}}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe{font-size:14px;height:32px;letter-spacing:0.25px;padding:0 10px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe{font-size:11px;height:20px;letter-spacing:0.3px;padding:0 8px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe{padding:0;width:40px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.pSzOP-SxQuSe{width:32px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.purZT-SxQuSe{width:20px}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK{-webkit-border-radius:20px;border-radius:20px}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK.pSzOP-SxQuSe{-webkit-border-radius:16px;border-radius:16px}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK.purZT-SxQuSe{-webkit-border-radius:10px;border-radius:10px}.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc{border:none;color:#fff}.nsm7Bb-HzV7m-LgbsSe.MFS4be-v3pZbf-Ia7Qfc{background-color:#1a73e8}.nsm7Bb-HzV7m-LgbsSe.MFS4be-JaPV2b-Ia7Qfc{background-color:#202124;color:#e8eaed}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{height:18px;margin-right:8px;min-width:18px;width:18px}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{height:14px;min-width:14px;width:14px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{height:10px;min-width:10px;width:10px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-Bz112c{margin-left:8px;margin-right:-4px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{margin:0;padding:10px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{padding:8px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{padding:4px}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{-webkit-border-top-left-radius:3px;border-top-left-radius:3px;-webkit-border-bottom-left-radius:3px;border-bottom-left-radius:3px;display:-webkit-box;display:-webkit-flex;display:flex;justify-content:center;-webkit-align-items:center;align-items:center;background-color:#fff;height:36px;margin-left:-10px;margin-right:12px;min-width:36px;width:36px}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf .nsm7Bb-HzV7m-LgbsSe-Bz112c,.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf .nsm7Bb-HzV7m-LgbsSe-Bz112c{margin:0;padding:0}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{height:28px;margin-left:-8px;margin-right:10px;min-width:28px;width:28px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{height:16px;margin-left:-6px;margin-right:8px;min-width:16px;width:16px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{-webkit-border-radius:3px;border-radius:3px;margin-left:2px;margin-right:0;padding:0}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{-webkit-border-radius:18px;border-radius:18px}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{-webkit-border-radius:14px;border-radius:14px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{-webkit-border-radius:8px;border-radius:8px}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-flex-direction:row;flex-direction:row;justify-content:space-between;-webkit-flex-wrap:nowrap;flex-wrap:nowrap;height:100%;position:relative;width:100%}.nsm7Bb-HzV7m-LgbsSe .oXtfBe-l4eHX{justify-content:center}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-BPrWId{-webkit-flex-grow:1;flex-grow:1;font-family:"Google Sans",arial,sans-serif;font-weight:500;overflow:hidden;text-overflow:ellipsis;vertical-align:top}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-BPrWId{font-weight:300}.nsm7Bb-HzV7m-LgbsSe .oXtfBe-l4eHX .nsm7Bb-HzV7m-LgbsSe-BPrWId{-webkit-flex-grow:0;flex-grow:0}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-MJoBVe{-webkit-transition:background-color .218s;transition:background-color .218s;bottom:0;left:0;position:absolute;right:0;top:0}.nsm7Bb-HzV7m-LgbsSe:hover,.nsm7Bb-HzV7m-LgbsSe:focus{-webkit-box-shadow:none;box-shadow:none;border-color:#d2e3fc;outline:none}.nsm7Bb-HzV7m-LgbsSe:hover .nsm7Bb-HzV7m-LgbsSe-MJoBVe,.nsm7Bb-HzV7m-LgbsSe:focus .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(66,133,244,.04)}.nsm7Bb-HzV7m-LgbsSe:active .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(66,133,244,.1)}.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:hover .nsm7Bb-HzV7m-LgbsSe-MJoBVe,.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:focus .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(255,255,255,.24)}.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:active .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(255,255,255,.32)}.nsm7Bb-HzV7m-LgbsSe .n1UuX-DkfjY{-webkit-border-radius:50%;border-radius:50%;display:-webkit-box;display:-webkit-flex;display:flex;height:20px;margin-left:-4px;margin-right:8px;min-width:20px;width:20px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId{font-family:"Roboto";font-size:12px;text-align:left}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .ssJRIf,.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff .fmcmS{overflow:hidden;text-overflow:ellipsis}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;color:#5f6368;fill:#5f6368;font-size:11px;font-weight:400}.nsm7Bb-HzV7m-LgbsSe.jVeSEe.MFS4be-Ia7Qfc .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff{color:#e8eaed;fill:#e8eaed}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff .Bz112c{height:18px;margin:-3px -3px -3px 2px;min-width:18px;width:18px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{-webkit-border-top-left-radius:0;border-top-left-radius:0;-webkit-border-bottom-left-radius:0;border-bottom-left-radius:0;-webkit-border-top-right-radius:3px;border-top-right-radius:3px;-webkit-border-bottom-right-radius:3px;border-bottom-right-radius:3px;margin-left:12px;margin-right:-10px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{-webkit-border-radius:18px;border-radius:18px}.L5Fo6c-sM5MNb{border:0;display:block;left:0;position:relative;top:0}.L5Fo6c-bF1uUb{-webkit-border-radius:4px;border-radius:4px;bottom:0;cursor:pointer;left:0;position:absolute;right:0;top:0}.L5Fo6c-bF1uUb:focus{border:none;outline:none}sentinel{}</style><meta http-equiv="origin-trial" content="A+N5HpM5gDAUeupaWw3J2yuMrpgH0IC7KtFHAqtmHkW8Vr+dPpJWuOpMNIRh3ybxyoIUKlvDQs7+VGPfYdQ/qQUAAABxeyJvcmlnaW4iOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IkZlZENtQXV0b1JlYXV0aG4iLCJleHBpcnkiOjE2OTE1MzkxOTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><style data-emotion="css" data-s=""></style></head><body><script id="noPrint">var noPrint=!0,noCopy=!0,noScreenshot=!0,autoBlur=!0</script><script>var freestar=freestar||{};freestar.queue=freestar.queue||[],freestar.queue.push((function(){googletag.pubads().set("page_url","https://clickasnap.com")}))</script><script type="text/javascript">function toBlur(){autoBlur&&document.getElementById("Pro")&&(document.getElementById("Pro").style.cssText="-webkit-filter: blur(5px);-moz-filter: blur(5px);-ms-filter: blur(5px);-o-filter: blur(5px);filter: blur(5px);")}function toClear(){document.getElementById("Pro")&&(document.getElementById("Pro").style.cssText="-webkit-filter: blur(0px);-moz-filter: blur(0px);-ms-filter: blur(0px);-o-filter: blur(0px);filter: blur(0px);")}noCopy&&(document.onkeydown=function(){1!=event.ctrlKey&&1!=event.metaKey||83!=event.keyCode||event.preventDefault(),1!=event.ctrlKey&&1!=event.metaKey||83!=event.code||event.preventDefault()}),document.onmouseenter=function(e){toClear()},document.onmouseleave=function(e){toBlur()},document.onblur=function(e){toBlur()},document.addEventListener("keyup",(e=>{"PrintScreen"==e.key&&noScreenshot&&navigator.clipboard.writeText("")})),document.addEventListener("keydown",(e=>{e.ctrlKey&&"p"==e.key&&noPrint&&(e.cancelBubble=!0,e.preventDefault(),e.stopImmediatePropagation())}))</script><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T3CXDMX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div class="css-1mpmnts"><nav><div class="container"><div class="row align-items-center full-width"><div class="col col-12 px-0"><div class="d-flex justify-content-between"><div class="d-flex align-items-center"><img tabindex="0" class="cursor-pointer me-4" src="static/media/logo-purple-black.3b1ac9bea3419009d3d2ed80e7fff9a5.svg" alt="logo"><a class="nav-link mx-3" href="/explore">Explore</a><a class="nav-link mx-3" href="/marketplace">Marketplace</a><a class="nav-link mx-3" href="/how-it-works">How it works</a></div><div class="d-flex align-items-center"><div class="d-flex align-items-center"><div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs" aria-label="[object Object]"><div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass icon black  text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M368 208A160 160 0 1 0 48 208a160 160 0 1 0 320 0zM337.1 371.1C301.7 399.2 256.8 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 48.8-16.8 93.7-44.9 129.1L505 471c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L337.1 371.1z"></path></svg></div></button></div><button type="button" class="btn primary outline     mx-2 btn-fs" aria-label="Log in">Log in</button><button type="button" class="btn primary      ms-2 btn-fs" aria-label="Sign up">Sign up</button></div></div></div></div></div></div></nav><section class="container jumbotron"><div class="row full-height"><div class="col col-12 col-xl-6 col-md-5 order-md-2 p-0"><div class="overlay-container"><img src="https://d1unuvan7ts7ur.cloudfront.net/0x800/filters:strip_exif()/3f0b17ba-41c4-5edc-a219-a4b4db00c261/01H9GVTT9CKWWR2CAY4KW8301P" class="background-image" alt="Clickasnap logo"><img src="static/media/roundel.1ed6427028f31f5b2a26e2a73957c893.svg" class="overlay-svg" alt="Clickasnap logo"></div></div><div class="col col-12 col-xl-6 col-md-7 order-md-1 pt-sm-2 pb-md-2"><div class="d-flex flex-column text-container pt-lg-5 pt-md-4 "><div class="head one mt-0 mt-md-5 mb-4">Your creativity pays</div><p class="body md">At ClickASnap <span class="primary text body bolder">it pays to share™ </span> –&nbsp;<br class="d-md-none">we provide the best online photo <br class="d-md-none">sharing platform to help you share <br class="d-md-none">your images and get paid for it. </p><div class="d-flex flex-row justify-content-center justify-content-md-start"><div><button type="button" class="btn primary      mx-2 btn-fs" aria-label="Sign up now">Sign up now</button></div><div class="ms-2"><button type="button" class="btn primary outline     mx-2 btn-fs" aria-label="Learn more">Learn more</button></div></div><div class="mt-4 mt-lg-5 mb-4"><p class="body sm">Photo of the day by <a tabindex="0" class="purple dark text body underline cursor-pointer">david1cross</a></p></div></div></div></div></section><section class="featured pb-4"><div class="container"><div class="row"><div class="col col-12"><h2 class="head two">Featured</h2></div><div class="LazyLoad is-visible col col-12" style="height: 100%;"><div style="display: flex; flex-direction: row; place-content: stretch center; box-sizing: border-box; width: 100%; gap: 0px;"><div style="display: flex; flex-direction: column; place-content: stretch flex-start; flex: 1 1 0%; width: 0px; gap: 0px;"><div class="p-2" tabindex="0"><div data-testid="card-container" class="card borderless"><div class="card-header "><img src="https://d1unuvan7ts7ur.cloudfront.net/0x750/filters:strip_exif()/28b8eb45-6141-40e0-98d9-fe5047153b8d/01H908JJ1S7MC22VJRYMQAQB9H" class="featured-image cursor-pointer" alt="featured-image"></div></div></div><div class="p-2" tabindex="0"><div data-testid="card-container" class="card borderless"><div class="card-header "><img src="https://d1unuvan7ts7ur.cloudfront.net/0x750/filters:strip_exif()/f73587dd-af9a-4d8d-9701-ef79b7572a40/01H96CSDETZNZQ23EVRVJNAQ5P" class="featured-image cursor-pointer" alt="featured-image"></div></div></div><div class="p-2" tabindex="0"><div data-testid="card-container" class="card borderless"><div class="card-header "><img src="https://d1unuvan7ts7ur.cloudfront.net/0x750/filters:strip_exif()/3bf2bd92-8d7c-44f7-8daa-cce92d6006d3/01HB0S7B3YZJ5RKYZ8ZCBB06M6" class="featured-image cursor-pointer" alt="featured-image"></div></div></div></div><div style="display: flex; flex-direction: column; place-content: stretch flex-start; flex: 1 1 0%; width: 0px; gap: 0px;"><div class="p-2" tabindex="0"><div data-testid="card-container" class="card borderless"><div class="card-header "><img src="https://d1unuvan7ts7ur.cloudfront.net/0x750/filters:strip_exif()/138b1471-1a8a-5ad7-a4bd-808481352d9e/01HAV3SSJ49CX7W3DRV8J0T063" class="featured-image cursor-pointer" alt="featured-image"></div></div></div><div class="p-2" tabindex="0"><div data-testid="card-container" class="card borderless"><div class="card-header "><img src="https://d1unuvan7ts7ur.cloudfront.net/0x750/filters:strip_exif()/6ec81777-2fb7-4cad-9284-1dab8641c145/01H9K9H4692JP121ABS02JJ75V" class="featured-image cursor-pointer" alt="featured-image"></div></div></div><div class="p-2" tabindex="0"><div data-testid="card-container" class="card borderless"><div class="card-header "><img src="https://d1unuvan7ts7ur.cloudfront.net/0x750/filters:strip_exif()/28b8eb45-6141-40e0-98d9-fe5047153b8d/01HAKTB4V0NTCZGW4T0258EQCJ" class="featured-image cursor-pointer" alt="featured-image"></div></div></div></div><div style="display: flex; flex-direction: column; place-content: stretch flex-start; flex: 1 1 0%; width: 0px; gap: 0px;"><div class="p-2" tabindex="0"><div data-testid="card-container" class="card borderless"><div class="card-header "><img src="https://d1unuvan7ts7ur.cloudfront.net/0x750/filters:strip_exif()/3a036c70-8391-586d-8022-d68d503f0dfb/01HAP2KTCMZ7S8KJG79DDQVF07" class="featured-image cursor-pointer" alt="featured-image"></div></div></div><div class="p-2" tabindex="0"><div data-testid="card-container" class="card borderless"><div class="card-header "><img src="https://d1unuvan7ts7ur.cloudfront.net/0x750/filters:strip_exif()/1134ef1c-47d1-59f0-a96a-d126119c50f3/01H9AG8J17QCVV7128PQTAPC6N" class="featured-image cursor-pointer" alt="featured-image"></div></div></div><div class="p-2" tabindex="0"><div data-testid="card-container" class="card borderless"><div class="card-header "><img src="https://d1unuvan7ts7ur.cloudfront.net/0x750/filters:strip_exif()/138b1471-1a8a-5ad7-a4bd-808481352d9e/01HA19T2X6H5YKR6TGHKHE2SCD" class="featured-image cursor-pointer" alt="featured-image"></div></div></div></div></div></div></div></div></section><section class="container how-it-works py-5"><div class="row"><div class="col col-12"><h2 class="head two mb-4">How it works</h2></div><div class="col-12 col-md-4 p-4"><div data-testid="card-container" class="card h-100 borderless"><div class="card-header "><div class="" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="image" class="svg-inline--fa fa-image icon purple lg text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M448 80c8.8 0 16 7.2 16 16V415.8l-5-6.5-136-176c-4.5-5.9-11.6-9.3-19-9.3s-14.4 3.4-19 9.3L202 340.7l-30.5-42.7C167 291.7 159.8 288 152 288s-15 3.7-19.5 10.1l-80 112L48 416.3l0-.3V96c0-8.8 7.2-16 16-16H448zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"></path></svg></div></div><div class="card-body px-md-4 px-lg-3 mt-2"><h5 class="card-title">Upload your photos</h5><section class="card-text"><p class="px-4 px-lg-3">Once you’ve signed up, simply use our easy upload system to add your images to our photo sharing platform and start earning money today.</p></section></div></div></div><div class="col-12 col-md-4 p-4"><div data-testid="card-container" class="card h-100 borderless"><div class="card-header "><div class="" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="eye" class="svg-inline--fa fa-eye icon purple lg text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M288 80c-65.2 0-118.8 29.6-159.9 67.7C89.6 183.5 63 226 49.4 256c13.6 30 40.2 72.5 78.6 108.3C169.2 402.4 222.8 432 288 432s118.8-29.6 159.9-67.7C486.4 328.5 513 286 526.6 256c-13.6-30-40.2-72.5-78.6-108.3C406.8 109.6 353.2 80 288 80zM95.4 112.6C142.5 68.8 207.2 32 288 32s145.5 36.8 192.6 80.6c46.8 43.5 78.1 95.4 93 131.1c3.3 7.9 3.3 16.7 0 24.6c-14.9 35.7-46.2 87.7-93 131.1C433.5 443.2 368.8 480 288 480s-145.5-36.8-192.6-80.6C48.6 356 17.3 304 2.5 268.3c-3.3-7.9-3.3-16.7 0-24.6C17.3 208 48.6 156 95.4 112.6zM288 336c44.2 0 80-35.8 80-80s-35.8-80-80-80c-.7 0-1.3 0-2 0c1.3 5.1 2 10.5 2 16c0 35.3-28.7 64-64 64c-5.5 0-10.9-.7-16-2c0 .7 0 1.3 0 2c0 44.2 35.8 80 80 80zm0-208a128 128 0 1 1 0 256 128 128 0 1 1 0-256z"></path></svg></div></div><div class="card-body px-md-4 px-lg-3 mt-2"><h5 class="card-title">Users view your photos</h5><section class="card-text"><p class="px-4 px-lg-3">Your photos are displayed to others that visit ClickASnap. When your photos are viewed, you make money.</p></section></div></div></div><div class="col-12 col-md-4 p-4"><div data-testid="card-container" class="card h-100 borderless"><div class="card-header "><div class="" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="circle-dollar" class="svg-inline--fa fa-circle-dollar icon purple lg text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM276.8 133.6v14.2c9.7 1.2 19.4 3.9 29 6.6c1.9 .5 3.7 1 5.6 1.6c11.5 3.2 18.3 15.1 15.1 26.6s-15.1 18.2-26.6 15.1c-1.6-.4-3.1-.9-4.7-1.3c-7-2-14-3.9-21.1-5.3c-13.2-2.5-28.5-1.3-40.8 4c-11 4.8-20.1 16.4-7.6 24.4c9.8 6.3 21.8 9.5 33.2 12.6c2.4 .6 4.7 1.3 7 1.9c15.6 4.4 35.5 10.1 50.4 20.3c19.4 13.3 28.5 34.9 24.2 58.1c-4.1 22.4-19.7 37.1-38.4 44.7c-7.8 3.2-16.3 5.2-25.2 6.2l0 15.2c0 11.9-9.7 21.6-21.6 21.6s-21.6-9.7-21.6-21.6l0-17.4c-14.5-3.3-28.7-7.9-42.8-12.5c-11.3-3.7-17.5-16-13.7-27.3s16-17.5 27.3-13.7c2.5 .8 5 1.7 7.5 2.5c11.3 3.8 22.9 7.7 34.5 9.6c17 2.5 30.6 1 39.5-2.6c12-4.8 17.7-19.1 5.9-27.1c-10.1-6.9-22.6-10.3-34.5-13.5c-2.3-.6-4.5-1.2-6.8-1.9c-15.1-4.3-34-9.6-48.2-18.7c-19.5-12.5-29.4-33.3-25.2-56.4c4-21.8 21-36.3 39-44.1c5.5-2.4 11.4-4.3 17.5-5.7V133.6c0-11.9 9.7-21.6 21.6-21.6s21.6 9.7 21.6 21.6z"></path></svg></div></div><div class="card-body px-md-4 px-lg-3 mt-2"><h5 class="card-title">Get paid for your photos</h5><section class="card-text"><p class="px-4 px-lg-3">Once your payment reaches $15, you can request to withdraw the money. Payments are made through PayPal for your security.</p></section></div></div></div><div class="col col-12"><div class="d-flex justify-content-center align-items-center"><button type="button" class="btn primary      mx-2 btn-fs" aria-label="Sign up now">Sign up now</button><button type="button" class="btn primary outline     mx-2 btn-fs" aria-label="Learn more">Learn more</button></div></div></div></section><section class="container categories py-3 ga_homepage_categories"><div class="row"><div class="LazyLoad is-visible" style="height: 100%;"><div class="px-2"><div class="mb-4 mb-md-5"><div class="d-flex justify-content-between align-items-center mb-3"><span class="head three">35mm film</span><span class="me-3"><a class="nav-link mx-3" href="/explore/35mm-film">See more &gt;</a></span></div><div class="row"><div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-3"><div data-testid="card-container" class="card h-100 borderless"><div class="card-header "><div class="card-img-top tile" style="background-image: url(&quot;https://cdn.clickasnap.com/0x1000/22906/p2069415-1.jpg&quot;);"></div></div></div></div><div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-3"><div data-testid="card-container" class="card h-100 borderless"><div class="card-header "><div class="card-img-top tile" style="background-image: url(&quot;https://d1unuvan7ts7ur.cloudfront.net/0x600/filters:strip_exif()/105a5351-e428-5fcb-b1bd-f45c685de359/01H2BX50RAM6XHAP9Z2VKH25MT&quot;);"></div></div></div></div><div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-3"><div data-testid="card-container" class="card h-100 borderless"><div class="card-header "><div class="card-img-top tile" style="background-image: url(&quot;https://cdn.clickasnap.com/0x1000/11630/mandy-001.jpg&quot;);"></div></div></div></div><div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-3"><div data-testid="card-container" class="card h-100 borderless"><div class="card-header "><div class="card-img-top tile" style="background-image: url(&quot;https://d1unuvan7ts7ur.cloudfront.net/0x600/filters:strip_exif()/fbe43782-fcde-5124-9dd0-2511f9712fea/01GXC1F7B67TQPFH2VXP2ED5Q8&quot;);"></div></div></div></div></div></div><div class="mb-4 mb-md-5"><div class="d-flex justify-content-between align-items-center mb-3"><span class="head three">Wildlife</span><span class="me-3"><a class="nav-link mx-3" href="/explore/wildlife">See more &gt;</a></span></div><div class="row"><div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-3"><div data-testid="card-container" class="card h-100 borderless"><div class="card-header "><div class="card-img-top tile" style="background-image: url(&quot;https://cdn.clickasnap.com/0x1000/21218/dsc-2370.JPG&quot;);"></div></div></div></div><div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-3"><div data-testid="card-container" class="card h-100 borderless"><div class="card-header "><div class="card-img-top tile" style="background-image: url(&quot;https://cdn.clickasnap.com/0x1000/615546/dsc00251.jpeg&quot;);"></div></div></div></div><div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-3"><div data-testid="card-container" class="card h-100 borderless"><div class="card-header "><div class="card-img-top tile" style="background-image: url(&quot;https://d1unuvan7ts7ur.cloudfront.net/0x600/filters:strip_exif()/f73587dd-af9a-4d8d-9701-ef79b7572a40/01H8M7Z7GBVA704P5M2CAH9JAK&quot;);"></div></div></div></div><div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-3"><div data-testid="card-container" class="card h-100 borderless"><div class="card-header "><div class="card-img-top tile" style="background-image: url(&quot;https://cdn.clickasnap.com/0x1000/22906/dsc-9736.jpg&quot;);"></div></div></div></div></div></div><div class="mb-4 mb-md-5"><div class="d-flex justify-content-between align-items-center mb-3"><span class="head three">Travel</span><span class="me-3"><a class="nav-link mx-3" href="/explore/travel">See more &gt;</a></span></div><div class="row"><div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-3"><div data-testid="card-container" class="card h-100 borderless"><div class="card-header "><div class="card-img-top tile" style="background-image: url(&quot;https://cdn.clickasnap.com/0x1000/615546/dsc01387.jpeg&quot;);"></div></div></div></div><div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-3"><div data-testid="card-container" class="card h-100 borderless"><div class="card-header "><div class="card-img-top tile" style="background-image: url(&quot;https://cdn.clickasnap.com/0x1000/128/1334 Iceland 2016-4.jpg&quot;);"></div></div></div></div><div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-3"><div data-testid="card-container" class="card h-100 borderless"><div class="card-header "><div class="card-img-top tile" style="background-image: url(&quot;https://cdn.clickasnap.com/0x1000/568/unnamed-6.jpg&quot;);"></div></div></div></div><div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 mb-3"><div data-testid="card-container" class="card h-100 borderless"><div class="card-header "><div class="card-img-top tile" style="background-image: url(&quot;https://cdn.clickasnap.com/0x1000/22906/aug-liveaboard-red-sea-2009-063.jpg&quot;);"></div></div></div></div></div></div></div></div></div></section><div class="Footer_box__2TCGa mt-5 p-4"><div class="container"><div class="row"><div class="col col-12 col-md-3"><img src="static/media/logo-purple-white.8e8e10419c141d90ed500625c24c76b6.svg" alt="Clickasnap logo" height="40px" width="120px"><p class="head five mt-3">It pays to share™</p></div><div class="col col-12 col-md-3 pb-4 pb-md-0"><p class="body bolder mb-2">Discover</p><a class="Footer_nav-link__3tgae" href="/about-us"><p class="my-2">About</p></a><a class="Footer_nav-link__3tgae" href="https://www.youtube.com/playlist?list=PLDc5zcAMIEBJPYDdUNAHoYK7xul_LjrVa"><p class="my-2">How it works</p></a><a class="Footer_nav-link__3tgae" href="https://blog.clickasnap.com/faqs/"><p class="my-2">FAQ</p></a></div><div class="col col-12 col-md-3 pb-4 pb-md-0"><p class="body bolder mb-2">Connect</p><a class="Footer_nav-link__3tgae" href="https://forum.clickasnap.com/"><p class="my-2">Forum</p></a><a class="Footer_nav-link__3tgae" href="https://blog.clickasnap.com/"><p class="my-2">Blog</p></a><a class="Footer_nav-link__3tgae" href="https://blog.clickasnap.com/faqs/"><p class="my-2">Support</p></a></div><div class="col col-12 col-md-3 pb-4 pb-md-0"><p class="body bolder mb-2">Company</p><a class="Footer_nav-link__3tgae" href="/terms-and-conditions"><p class="my-2">Terms of use</p></a><a class="Footer_nav-link__3tgae" href="/privacy-policy"><p class="my-2">Privacy policy</p></a><a class="Footer_nav-link__3tgae" href="/paid-per-view-policy"><p class="my-2">Paid per view policy</p></a><a class="Footer_nav-link__3tgae" href="/refund-policy"><p class="my-2">Refund policy</p></a></div></div><div class="row justify-content-center mt-5"><div class="col col-auto px-1 px-md-2"><div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs" aria-label="[object Object]"><div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" class="svg-inline--fa fa-facebook icon white lg text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg></div></button></div></div><div class="col col-auto px-1 px-md-2"><div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs" aria-label="[object Object]"><div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" class="svg-inline--fa fa-instagram icon white lg text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></div></button></div></div><div class="col col-auto px-1 px-md-2"><div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs" aria-label="[object Object]"><div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" class="svg-inline--fa fa-linkedin icon white lg text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></div></button></div></div><div class="col col-auto px-1 px-md-2"><div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs" aria-label="[object Object]"><div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="pinterest" class="svg-inline--fa fa-pinterest icon white lg text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"></path></svg></div></button></div></div><div class="col col-auto px-1 px-md-2"><div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs" aria-label="[object Object]"><div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" class="svg-inline--fa fa-youtube icon white lg text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></div></button></div></div><div class="col col-auto px-1 px-md-2"><div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs" aria-label="[object Object]"><div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="tiktok" class="svg-inline--fa fa-tiktok icon white lg text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"></path></svg></div></button></div></div><div class="col col-auto px-1 px-md-2"><div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs" aria-label="[object Object]"><div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="x-twitter" class="svg-inline--fa fa-x-twitter icon white lg text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg></div></button></div></div></div><div class="row justify-content-center"><div class="col col-auto"><p class="body caption">Copyright © 2023 All Rights Reserved. v1.19.3</p></div></div></div></div></div></div><script type="text/javascript" id="">(function(a,b){a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://cdn-eu.pagesense.io/js/videscapelimited/457d6ccd02024735b280ee7df035c84e.js";b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})(window,"script");</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VLF2RGE5Q9"></script></body></html>
