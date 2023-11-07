@@ -45,10 +45,29 @@ button.addEventListener('click', (e) => {
   );
 
   // Send the API request, and redirect the new tab to the URL that is returned
+  // https://teemill.com/omnis/v3/product/create
   fetch('https://teemill.com/omnis/v3/product/create', options)
     .then(response => response.json())
     .then(response => newTab.location.href = response.url)
     .catch(err => console.error(err));
 
 });
+
+    function rotateImage() {
+      const image = document.getElementById('rotateImage');
+      // Get the current rotation angle (in degrees)
+      let currentRotation = 0;
+      const transform = window.getComputedStyle(image).getPropertyValue('transform');
+      if (transform && transform !== 'none') {
+        const matrix = transform
+          .replace('matrix(', '')
+          .replace(')', '')
+          .split(',');
+        currentRotation = Math.round(Math.atan2(matrix[1], matrix[0]) * (180 / Math.PI));
+      }
+
+      // Add a 45-degree rotation to the current angle
+      currentRotation += 360;
+      image.style.transform = `rotate(${currentRotation}deg)`;
+    }
 

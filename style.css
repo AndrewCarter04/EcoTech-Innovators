@@ -72,3 +72,7 @@ input {
 .align-right {
   float: right;
 }
+
+.rotate {
+  transition: transform 0.5s; /* Add a smooth transition effect */
+}
