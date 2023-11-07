@@ -1,24 +1,38 @@
-// Define the button and canvas variables
-
 // Add a click handler to the button
 document.addEventListener('DOMContentLoaded', function() {
+
   document.getElementById('printBtn').addEventListener('click', function() {
-    // Export the base64 image from the canvas
 
     const cat = document.getElementById('selectedImg');
-    
+
+    cat.crossOrigin = "anonymous";
+
+    // create new 2d canvas
     const canvas = document.createElement("canvas");
     const context = canvas.getContext('2d');
 
+    // set canvas to image size
     canvas.width = cat.width;
     canvas.height = cat.height;
-
+    
     context.drawImage(cat, 0, 0);
 
-    const base64_image = canvas.toDataURL(); //canvas needs to be the clickasnap image
+    // convert canvas with image to base 64
+    const base64_image = canvas.toDataURL();
 
-    // You’ll need to replace the API key below with your one, so the checkout has your branding and you get paid. Get your key inside your free teemill.com account. It's ok if the key is in the code as in this context it's a bearer token, and all the endpoint does is use it to return your checkout. If someone scrapes it and uses it in their code, you will just get more money.
-    const apiKey = '5QC77oaTjHNvevgwSHuIfvil6bQgQCbFWQyXjeyQ'; 
+    // call api
+    goToTeemill(base64_image, "Black,White", 20.0);
+
+  });
+});
+
+
+// api calls
+
+// teemill
+function goToTeemill(base64_image, colours, price) {
+
+  const apiKey = '5QC77oaTjHNvevgwSHuIfvil6bQgQCbFWQyXjeyQ';
 
     // Set the fields to submit. image_url is the only required field for the API request. If you want, you can set the product name, description and price. You can also change the product type and colours using item_code and colours. To find an up-to-date list of available options for these fields, visit this endpoint: https://teemill.com/omnis/v3/product/options/
     const options = {
@@ -31,9 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
         image_url: base64_image,
         item_code: "RNA1",
         name: "Custom",
-        colours: "White,Black",
+        colours: colours,
         description: "Check out this awesome doodle tee, printed on an organic cotton t-shirt sustainably, using renewable energy. Created via the Teemill API and printed on demand.",
-        price: 20.00,
+        price: price,
       }),
     };
 
@@ -48,9 +62,56 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(response => response.json())
       .then(response => newTab.location.href = response.url)
       .catch(err => console.error(err));
+  
+}
 
-  });
-});
+// vanceai
+
+function getVanceAIImage(img_path) {
+
+  const apiKey = "ddfa4d389fba85c522b24ebc09e1b2fd";
+
+      const formData = new FormData();
+      formData.append('file', blob, 'image.webp');
+      formData.append('api_token', apiKey);
+
+      const options = {
+        method: 'POST',
+        body: formData,
+      };
+
+      fetch('https://api-service.vanceai.com/web_api/v1/upload', options)
+        .then(response => response.json())
+        .then(response => {
+          console.log(response);
+        })
+        .catch(err => console.error(err));
+
+  // Potentially use flask to handle download integration
+  
+  
+  
+}
+
+getVanceAIImage("https://d1unuvan7ts7ur.cloudfront.net/0x750/filters:strip_exif()/6ec81777-2fb7-4cad-9284-1dab8641c145/01H9K9H4692JP121ABS02JJ75V");
 
 
+// clothing colour calculator
 
+var possibleColours = [
+  "",
+  "",
+  ""
+];
+
+function calculateColour(img) {
+
+  
+  
+}
+
+function colourValueToName() {
+
+  
+  
+}
