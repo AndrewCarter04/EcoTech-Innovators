@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.getElementById('printBtn').addEventListener('click', function() {
 
-    
-
     // convert canvas with image to base 64
     const base64_image = imageToBase64();
 
@@ -33,17 +31,24 @@ function imageToBase64() {
   return canvas.toDataURL();
 }
 
-
-// api calls
-
-// teemill
-function goToTeemill(base64_image, colours, price) {
-
+function imageURLToBase64(img_url) {
   
+}
+
+
+// ///////// //
+// API Calls //
+// ///////// //
+
+/** TeeMill API call
+ * @param {string} base64_image - base64 encoded image
+ * @param {string} colours - the comma seperated list of colour options for the item
+ * @param {number} price - the price of the item
+*/
+function goToTeemill(base64_image, colours, price) {
   
   const apiKey = '5QC77oaTjHNvevgwSHuIfvil6bQgQCbFWQyXjeyQ';
 
-    // Set the fields to submit. image_url is the only required field for the API request. If you want, you can set the product name, description and price. You can also change the product type and colours using item_code and colours. To find an up-to-date list of available options for these fields, visit this endpoint: https://teemill.com/omnis/v3/product/options/
     const options = {
       method: 'POST',
       headers: {
@@ -60,35 +65,36 @@ function goToTeemill(base64_image, colours, price) {
       }),
     };
 
-    // Open a new tab, ready to receive the product URL. 
+    // Open a new tab, ready to receive and navigate to the product URL. 
     var newTab = window.open('about:blank', '_blank');
     newTab.document.write(
       "<body style='background-color:#faf9f9;width:100%;height:100%;margin:0;position:relative;'><img src='https://storage.googleapis.com/teemill-dev-image-bucket/doodle2tee_loader.gif' style='position:absolute;top:calc(50% - 100px);left:calc(50% - 100px);'/></body>"
     );
 
-    // Send the API request, and redirect the new tab to the URL that is returned
+    // Send the API request
     fetch('https://teemill.com/omnis/v3/product/create', options)
       .then(response => response.json())
-      .then(response => newTab.location.href = response.url)
+      .then(response => newTab.location.href = response.url) // redirect the new tab to the URL that is returned
       .catch(err => console.error(err));
   
 }
 
-// vanceai
-
-function getVanceAIImage(image) {
+/** VanceAI API
+ * @param {string} image_url - URL of the image
+ * Starts the process of submitting, processing and downloading the Gen AI adapted image
+*/
+function getVanceAIImage(image_url) {
 
   const apiKey = "ddfa4d389fba85c522b24ebc09e1b2fd";
 
   const xhr = new XMLHttpRequest();
 
-  xhr.open('GET', 'static/media/01H9K9H4692JP121ABS02JJ75V.webp', true);
+  xhr.open('GET', image_url, true);
   xhr.responseType = 'blob';
 
   xhr.onload = function () {
     if (xhr.status === 200) {
       const blob = xhr.response;
-      // You can now work with the 'blob' data, for example, display it or send it to an API.
 
       const formData = new FormData();
       formData.append('file', blob);
@@ -149,7 +155,7 @@ function processImage(response) {
     .then(response => response.json())
     .then(response => {
       console.log(response);
-      const intervalId = setInterval(() => checkStatus(response), 2000);
+      //const intervalId = setInterval(() => checkStatus(response), 2000);
     })
     .catch(err => console.error(err));
   
@@ -177,6 +183,7 @@ function checkStatus(response) {
         if (response.data.status === 'finish') {
           clearInterval(intervalId); 
           downloadImage(response);
+        }
       } else {
         console.error('Error:', response.message);
       }
@@ -260,7 +267,50 @@ function getAverageColor(imgEl) {
 
 }
 
-
-
 // Usage
 console.log(getAverageColor(document.getElementById('selectedImg')));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ninja api
+
+function getTextForImage() {
+
+  const apiKey = "";
+  
+  const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        api_token: apiKey,
+      }),
+    
+  };
+
+  fetch('https://api.api-ninjas.com/v1/imagetotext', options)
+    .then(response => response)
+    .then(() => {
+      console.log(response);
+    });
+  
+}

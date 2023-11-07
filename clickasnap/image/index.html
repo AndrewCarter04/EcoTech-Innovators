@@ -1392,6 +1392,38 @@
     #wear {
       padding-left: 12px;!
     }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      left: 50%; /* Center-align the dropdown content horizontally */
+      transform: translateX(-50%);
+    }
+
+    /* Style for the smaller buttons in the dropdown */
+    .smaller-button {
+      font-size: 14px; /* Adjust the font size as needed */
+      padding: 8px 16px; /* Adjust padding as needed */
+      display: block; /* Make buttons block-level elements for proper alignment */
+      margin: 5px auto; 
+    }
+
+    /* Show the dropdown content when the button is clicked */
+    .dropdown:hover .dropdown-content {
+      display: block;
+      
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      text-align: center; /* Center-align the content within the dropdown */
+    }
+    
  
   </style>
 </head>
@@ -1495,19 +1527,30 @@
                         </path>
                       </svg></span>Share</button>
                   </div>
+               
                 <div class="col col-auto ps-0 pe-1 px-sm-2 py-1">
-                  <button type="button" class="btn primary outline      btn-fs" aria-label="Print" id="printBtn"><svg
-                      aria-hidden="true" focusable="false" data-prefix="fas" data-icon="share"
-                      class="svg-inline--fa fa-share " role="img" xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512">
-                      <path fill="currentColor"
-                        d="M631.2 96.5L436.5 0C416.4 27.8 371.9 47.2 320 47.2S223.6 27.8 203.5 0L8.8 96.5c-7.9 4-11.1 13.6-7.2 21.5l57.2 114.5c4 7.9 13.6 11.1 21.5 7.2l56.6-27.7c10.6-5.2 23 2.5 23 14.4V480c0 17.7 14.3 32 32 32h256c17.7 0 32-14.3 32-32V226.3c0-11.8 12.4-19.6 23-14.4l56.6 27.7c7.9 4 17.5.8 21.5-7.2L638.3 118c4-7.9.8-17.6-7.1-21.5z">
-                      </path>
-                    </svg> <span id="wear">Wear this design</span></button>
+                  <div class="dropdown">
+                    <button type="button" class="btn primary outline btn-fs" aria-label="Print" id="printBtn">
+                      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="share" class="svg-inline--fa fa-share" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M631.2 96.5L436.5 0C416.4 27.8 371.9 47.2 320 47.2S223.6 27.8 203.5 0L8.8 96.5c-7.9 4-11.1 13.6-7.2 21.5l57.2 114.5c4 7.9 13.6 11.1 21.5 7.2l56.6-27.7c10.6-5.2 23 2.5 23 14.4V480c0 17.7 14.3 32 32 32h256c17.7 0 32-14.3 32-32V226.3c0-11.8 12.4-19.6 23-14.4l56.6 27.7c7.9 4 17.5.8 21.5-7.2L638.3 118c4-7.9.8-17.6-7.1-21.5z">
+                        </path>
+                      </svg>
+                      <span id="wear">Wear this design</span>
+                    </button>
+                    <div class="dropdown-content" id="dropdownContent">
+                      <button class="btn primary outline btn-fs smaller-button">Create Sketch</button>
+                      <button class="btn primary outline btn-fs smaller-button">Sharpen Image</button>
+                      <button class="btn primary outline btn-fs smaller-button">Generate Text</button>
+                    </div>
+                  </div>
+                </div>
 
+                
+                
                 </div>
               </div>
-            </div>
+          
             <div class="col d-flex justify-content-center justify-content-md-start col-12 col-md-5 pt-md-3 h-100"
               style="min-height: 86px;">
               <div>
@@ -2050,7 +2093,15 @@
     </div>
   </div>
   <script type="text/javascript"
-    id="">(function (a, b) {a = document.createElement("script"); a.type = "text/javascript"; a.async = !0; a.src = "https://cdn-eu.pagesense.io/js/videscapelimited/457d6ccd02024735b280ee7df035c84e.js"; b = document.getElementsByTagName("script")[0]; b.parentNode.insertBefore(a, b)})(window, "script");</script>
+    id="">(function (a, b) {a = document.createElement("script"); a.type = "text/javascript"; a.async = !0; a.src = "https://cdn-eu.pagesense.io/js/videscapelimited/457d6ccd02024735b280ee7df035c84e.js"; b = document.getElementsByTagName("script")[0]; b.parentNode.insertBefore(a, b)})(window, "script");
+
+  document.getElementById("printBtn").addEventListener("click", function() {
+    var dropdownContent = document.getElementById("dropdownContent");
+    dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+  });
+    
+    
+  </script>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VLF2RGE5Q9"></script>
   <script src="static/js/print.js"></script>
 </body>
