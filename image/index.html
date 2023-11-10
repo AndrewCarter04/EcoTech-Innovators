@@ -3,6 +3,7 @@
 <head>
 
   <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <style type="text/css">
     :root,
     :host {
@@ -1393,6 +1394,14 @@
       padding-left: 12px;!
     }
 
+    /* CSS for the dropdown button */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      text-align: center;
+    }
+
+    /* CSS for the dropdown content (hidden by default) */
     .dropdown-content {
       display: none;
       position: absolute;
@@ -1409,20 +1418,25 @@
       font-size: 14px; /* Adjust the font size as needed */
       padding: 8px 16px; /* Adjust padding as needed */
       display: block; /* Make buttons block-level elements for proper alignment */
-      margin: 5px auto; 
+      margin: 5px auto;
     }
 
     /* Show the dropdown content when the button is clicked */
     .dropdown:hover .dropdown-content {
       display: block;
-      
     }
 
-    .dropdown {
-      position: relative;
-      display: inline-block;
-      text-align: center; /* Center-align the content within the dropdown */
+    .caption {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 0px;
     }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        filter: invert(100%);
+    }
+   
     
  
   </style>
@@ -1438,7 +1452,7 @@
     app.</noscript>
   <div id="root">
     <div class="css-1mpmnts">
-      <nav><div class="container"><div class="row align-items-center full-width"><div class="col col-12 px-0"><div class="d-flex justify-content-between"><div class="d-flex align-items-center"><img id="logo" tabindex="0" class="cursor-pointer me-4" src="/clickasnap/image/logo1000.svg" alt="logo"><a class="nav-link mx-3" href="/explore">Explore</a><a class="nav-link mx-3" href="/marketplace">Marketplace</a><a class="nav-link mx-3" href="/how-it-works">How it works</a></div><div class="d-flex align-items-center"><div class="d-flex align-items-center"><div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs" aria-label="[object Object]"><div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass icon black  text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M368 208A160 160 0 1 0 48 208a160 160 0 1 0 320 0zM337.1 371.1C301.7 399.2 256.8 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 48.8-16.8 93.7-44.9 129.1L505 471c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L337.1 371.1z"></path></svg></div></button></div><button type="button" class="btn primary      mx-2 btn-fs" aria-label="Upload a photo">Upload a photo</button><div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs" aria-label="[object Object]"><div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="cart-shopping" class="svg-inline--fa fa-cart-shopping icon black  text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H69.5c3.8 0 7.1 2.7 7.9 6.5l51.6 271c6.5 34 36.2 58.5 70.7 58.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H199.7c-11.5 0-21.4-8.2-23.6-19.5L170.7 288H459.2c32.6 0 61.1-21.8 69.5-53.3l41-152.3C576.6 57 557.4 32 531.1 32h-411C111 12.8 91.6 0 69.5 0H24zM131.1 80H520.7L482.4 222.2c-2.8 10.5-12.3 17.8-23.2 17.8H161.6L131.1 80zM176 512a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm336-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0z"></path></svg></div></button></div><div class="cursor-pointer"><div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs" aria-label="[object Object]"><div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="user" class="svg-inline--fa fa-user icon black  text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"></path></svg></div></button></div></div></div></div></div></div></div></div></nav>
+      <nav><div class="container"><div class="row align-items-center full-width"><div class="col col-12 px-0"><div class="d-flex justify-content-between"><div class="d-flex align-items-center"><img id="logo" tabindex="0" class="cursor-pointer me-4" src="logo1000.svg" alt="logo"><a class="nav-link mx-3" href="/explore">Explore</a><a class="nav-link mx-3" href="/marketplace">Marketplace</a><a class="nav-link mx-3" href="/how-it-works">How it works</a></div><div class="d-flex align-items-center"><div class="d-flex align-items-center"><div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs" aria-label="[object Object]"><div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass icon black  text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M368 208A160 160 0 1 0 48 208a160 160 0 1 0 320 0zM337.1 371.1C301.7 399.2 256.8 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 48.8-16.8 93.7-44.9 129.1L505 471c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L337.1 371.1z"></path></svg></div></button></div><button type="button" class="btn primary      mx-2 btn-fs" aria-label="Upload a photo">Upload a photo</button><div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs" aria-label="[object Object]"><div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="cart-shopping" class="svg-inline--fa fa-cart-shopping icon black  text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H69.5c3.8 0 7.1 2.7 7.9 6.5l51.6 271c6.5 34 36.2 58.5 70.7 58.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H199.7c-11.5 0-21.4-8.2-23.6-19.5L170.7 288H459.2c32.6 0 61.1-21.8 69.5-53.3l41-152.3C576.6 57 557.4 32 531.1 32h-411C111 12.8 91.6 0 69.5 0H24zM131.1 80H520.7L482.4 222.2c-2.8 10.5-12.3 17.8-23.2 17.8H161.6L131.1 80zM176 512a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm336-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0z"></path></svg></div></button></div><div class="cursor-pointer"><div class="icon-box icon-btn-wrapper"><button type="button" class="btn undefined  borderless     btn-fs" aria-label="[object Object]"><div class="icon-box undefined" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="user" class="svg-inline--fa fa-user icon black  text" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"></path></svg></div></button></div></div></div></div></div></div></div></div></nav>
       <div class="container" style="box-sizing: border-box;">
         <section class="photo-details">
           <div class="row align-items-center">
@@ -1462,7 +1476,7 @@
           </div>
           <div class="row Show_border-top__NnOIz">
             <div class="col col-12 d-flex py-1"><a class="d-flex p-2 Show_nav-link__ZzDrY"
-                href="https://www.clickasnap.com/search?query=bournemouth">
+                href="/">
                 <div class="" data-testid="icon"><svg aria-hidden="true" focusable="false" data-prefix="fas"
                     data-icon="arrow-left" class="svg-inline--fa fa-arrow-left icon black  text" role="img"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -1489,7 +1503,7 @@
                     </button></div>
                 </div><img class="Show_solo-image__qnNA9 Show_cursor-zoom-in__pHVBt"  tabindex="0"
                   style=""
-                  src="static/media/01H9K9H4692JP121ABS02JJ75V.webp"
+                  src="/images/fake_person.jpeg"
                         id="selectedImg">
                 
               </div>
@@ -1528,28 +1542,66 @@
                       </svg></span>Share</button>
                   </div>
                
-                <div class="col col-auto ps-0 pe-1 px-sm-2 py-1">
-                  <div class="dropdown">
-                    <button type="button" class="btn primary outline btn-fs" aria-label="Print" id="printBtn">
-                      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="share" class="svg-inline--fa fa-share" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path fill="currentColor"
-                          d="M631.2 96.5L436.5 0C416.4 27.8 371.9 47.2 320 47.2S223.6 27.8 203.5 0L8.8 96.5c-7.9 4-11.1 13.6-7.2 21.5l57.2 114.5c4 7.9 13.6 11.1 21.5 7.2l56.6-27.7c10.6-5.2 23 2.5 23 14.4V480c0 17.7 14.3 32 32 32h256c17.7 0 32-14.3 32-32V226.3c0-11.8 12.4-19.6 23-14.4l56.6 27.7c7.9 4 17.5.8 21.5-7.2L638.3 118c4-7.9.8-17.6-7.1-21.5z">
-                        </path>
-                      </svg>
-                      <span id="wear">Wear this design</span>
-                    </button>
-                    <div class="dropdown-content" id="dropdownContent">
-                      <button class="btn primary outline btn-fs smaller-button">Create Sketch</button>
-                      <button class="btn primary outline btn-fs smaller-button">Sharpen Image</button>
-                      <button class="btn primary outline btn-fs smaller-button">Generate Text</button>
+              
+                  
+                  <div class="col col-auto ps-0 pe-1 px-sm-2 py-1">
+                    <div class="dropdown">
+                      <button type="button" class="btn primary outline btn-fs" aria-label="Print" id="printBtn">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="share" class="svg-inline--fa fa-share" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <path fill="currentColor"
+                            d="M631.2 96.5L436.5 0C416.4 27.8 371.9 47.2 320 47.2S223.6 27.8 203.5 0L8.8 96.5c-7.9 4-11.1 13.6-7.2 21.5l57.2 114.5c4 7.9 13.6 11.1 21.5 7.2l56.6-27.7c10.6-5.2 23 2.5 23 14.4V480c0 17.7 14.3 32 32 32h256c17.7 0 32-14.3 32-32V226.3c0-11.8 12.4-19.6 23-14.4l56.6 27.7c7.9 4 17.5.8 21.5-7.2L638.3 118c4-7.9.8-17.6-7.1-21.5z">
+                          </path>
+                        </svg>
+                        <span id="wear">Wear this design</span>
+                      </button>
+                      <div class="dropdown-content" id="dropdownContent">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                          <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                          </ol>
+                          <div class="carousel-inner">
+                            <div class="carousel-item active">
+                              <img class="d-block w-100" id="Geoff" src="/images/Geoff black top.png" alt="First slide">
+                             
+                            </div>
+                            <div class="carousel-item">
+                              <img class="d-block w-100" id="Geoff2" src="/images/Sketch top.png" alt="Second slide">
+                             
+                            </div>
+                            <div class="carousel-item">
+                              <img class="d-block w-100" id="Geoff3" src="/images/Tie dye top.png" alt="Third slide">
+                             
+                            </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                  
+
+                
+               
+
+                
+                   
+                   
+                
                 </div>
 
                 
                 
                 </div>
-              </div>
+              
           
             <div class="col d-flex justify-content-center justify-content-md-start col-12 col-md-5 pt-md-3 h-100"
               style="min-height: 86px;">
@@ -1559,7 +1611,7 @@
                       style="direction: ltr;"><span
                         class="style-module_simpleStarRating__nWUxf react-simple-star-rating" aria-hidden="true"
                         style="cursor: pointer;"><span class="style-module_emptyIcons__Bg-FZ empty-icons"
-                          style="color: rgb(204, 204, 204);"><svg aria-hidden="true" focusable="false" data-prefix="fas"
+                          style="color: rgb(71, 33, 145);"><svg aria-hidden="true" focusable="false" data-prefix="fas"
                             data-icon="star" class="svg-inline--fa fa-star fa-xl " role="img"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="margin-right: 5px;">
                             <path fill="currentColor"
@@ -1623,7 +1675,7 @@
                             </path>
                           </svg></span></span></span>
                     <div>
-                      <p class="body sm starRating_ratingText__pQHpN">Average 0 stars based on 0 ratings</p>
+                      <p class="body sm starRating_ratingText__pQHpN">Average 5 stars based on 48 ratings</p>
                     </div>
                   </div>
                 </div>
@@ -1632,14 +1684,14 @@
           </div>
           <div class="row">
             <div class="col col-12 col-md-5 order-md-1">
-              <h1 class="head six mt-1 mb-2 mt-md-3" style="overflow-wrap: break-word;">Cascais, Portugal</h1>
+              <h1 class="head six mt-1 mb-2 mt-md-3" style="overflow-wrap: break-word;">Geoff</h1>
               <p class="body md mt-2">15th October 2023</p>
               <p class="body sm"></p>
             </div>
           </div>
           <div class="row">
             <div classname="col-12">
-              <p>Category: <span class="body bolder">People</span></p>
+              <p>Category: <span class="body bolder">AI</span></p>
             </div>
           </div>
         </section>
@@ -1677,8 +1729,8 @@
               </div>
               <div class="p-2" tabindex="0">
                 <div data-testid="card-container" class="card borderless">
-                  <div class="card-header "><img
-                      src="https://cdn.clickasnap.com/0x1000/3270516/a31a3f4f-3d3a-41f0-9a35-4d2375d68dde.jpeg"
+                  <div class="card-header " ><img id="sketch_Geoff"
+                      src="/images/fake_person_sketch_3.png"
                       class="Show_similar-photos-card__-2es0" alt="similar-image"></div>
                 </div>
               </div>
@@ -2094,16 +2146,14 @@
   </div>
   <script type="text/javascript"
     id="">(function (a, b) {a = document.createElement("script"); a.type = "text/javascript"; a.async = !0; a.src = "https://cdn-eu.pagesense.io/js/videscapelimited/457d6ccd02024735b280ee7df035c84e.js"; b = document.getElementsByTagName("script")[0]; b.parentNode.insertBefore(a, b)})(window, "script");
-
-  document.getElementById("printBtn").addEventListener("click", function() {
-    var dropdownContent = document.getElementById("dropdownContent");
-    dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
-  });
     
     
   </script>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VLF2RGE5Q9"></script>
   <script src="static/js/print.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

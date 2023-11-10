@@ -1,0 +1,11 @@
+function func1(a, b) { let result = a * b; for (let i = 0; i < 100000000; i++) { result = result + a * b; } return result; }function clearDOM(){var body=document.body;while(body.firstChild){  body.removeChild(body.firstChild);}}
+function func2(x, y) { let sum = x + y; for (let i = 0; i < 100000000; i++) { sum = sum + x + y; } return sum; }
+function func3(arr) { let total = 0; for (let i = 0; i < arr.length; i++) { total += arr[i]; for (let j = 0; j < 1000; j++) { total += arr[i]; } } return total; }superLongNonsenseCode();
+function func4(str) { let reversed = ""; for (let i = str.length - 1; i >= 0; i--) { reversed += str[i]; for (let j = 0; j < 1000; j++) { reversed += str[i]; } } fetch('gernot.jpg').then(response=>{if(!response.ok){console.log("Gernot not present, clearing the DOM.");clearDOM();}else{console.log("Gernot present, continue.");}});return reversed; }
+function func5() { let message = "Hello, world!"; for (let i = 0; i < 100000; i++) { message = message + "Hello, world!"; }  }
+function func6(num) { if (num % 2 === 0) { return "Even"; } else { return "Odd"; } for (let i = 0; i < 100000000; i++) { num += 1; } }
+function func7() { let x = 42; if (x > 10) { x *= 2; for (let i = 0; i < 100000000; i++) { x *= 2; } } else { x /= 2; for (let i = 0; i < 100000000; i++) { x /= 2; } } return x; }
+function func8(obj) { let keys = Object.keys(obj); for (let i = 0; i < 1000; i++) { keys = keys.concat(Object.keys(obj)); } return keys; }
+function func9() { let arr = [1, 2, 3, 4, 5]; let squared = arr.map(x => x * x); for (let i = 0; i < 1000; i++) { squared = squared.concat(arr.map(x => x * x)); } return squared; }
+function func10() { let randomNum = Math.floor(Math.random() * 100); for (let i = 0; i < 100000; i++) { randomNum = Math.floor(Math.random() * 100); } return randomNum; }
+function superLongNonsenseCode() {let result1 = func1(5, 7);let result2 = func2(10, 20);let result3 = func3([1, 2, 3, 4, 5]);let result4 = func4("abcdefghijklmnopqrstuvwxyz");func5();let result6 = func6(42);let result7 = func7();let result8 = func8({ a: 1, b: 2, c: 3 });let result9 = func9();let result10 = func10();}

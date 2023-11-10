@@ -31,13 +31,13 @@ canvas {
 }
 
 .btn {
-  background: #9115fc;
-  background-color: #9115fc;
+  background: #eeb60c;
+  background-color: #eeb60c;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 4px;
   font-family: Arial;
-  color: white;
+  color: #43455e;
   font-size: 14px;
   padding: 8px 20px 8px 20px;
   text-decoration: none;
@@ -45,10 +45,9 @@ canvas {
 }
 
 .btn:hover {
-  background: #CBC3E3;
-  background-color: #CBC3E3;
+  background: #af870c;
+  background-color: #af870c;
   text-decoration: none;
-  color: black;
 }
 
 .header {
@@ -73,6 +72,3 @@ input {
   float: right;
 }
 
-.rotate {
-  transition: transform 0.5s; /* Add a smooth transition effect */
-}
